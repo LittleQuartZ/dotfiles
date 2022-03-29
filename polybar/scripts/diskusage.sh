@@ -13,7 +13,7 @@ case $BLOCK_BUTTON in
 - Click to show all disk info." ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
-icon=" "
+icon=""
 #	"/
 #case "$location" in
 #	"/home"* ) mnt"* ) icon="💾" ;;

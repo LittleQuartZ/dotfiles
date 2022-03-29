@@ -12,7 +12,7 @@ super + w
 
 # file manager
 super + n
-	pcmanfm
+	kitty -e ranger
 
 # program launcher
 super + shift + d
@@ -138,7 +138,7 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
 	amixer set Master 5%+
 XF86AudioMute
-	amixer set Master toggle
+  pactl set-sink-mute 0 toggle
 
 # brightness up + (shift)
 XF86MonBrightnessUp

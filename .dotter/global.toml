@@ -6,26 +6,37 @@
 # A package contains two sections - "files" and "variables".
 # Both of those sections are optional - you can have only one if you want.
 
-# like cp
+# like cp / symlink
 # "./.foo" = "~/.foo"
-[zsh.files]
-zshrc = "~/.zshrc"
+# [zsh.files]
+# zshrc = "~/.zshrc"
 
 # use variables in files {{ var }}
 # [zsh.variables]
 # prompt_color = "#00FF00"
+[bspwm]
+depends = []
+
+[sxhkd]
+depends = []
+
+[kitty]
+depends = []
+
+[dunst]
+depends = []
 
 [bspwm.files]
 # depends = ["dependencies"]
 # Xinitrc = "~/.xinitrc"
 bspwmrc = "~/.config/bspwm/bspwmrc"
-# polybar = "~/.config/polybar/"
+polybar = "~/.config/polybar/"
 
 [sxhkd.files]
 sxhkdrc = "~/.config/sxhkd/sxhkdrc"
 
 [kitty.files]
-kitty.conf = "~/.config/kitty/kitty.conf" 
+kitty.conf = "~/.config/kitty/kitty.conf"
 
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
