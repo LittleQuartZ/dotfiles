@@ -1,42 +1,13 @@
-# Helpers are user-defined functions that can be executed inside templates.
-# This section is optional.
-# [helpers]
-# color_hex2rgb = "dotter_settings/helpers/color_hex2rgb.rhai"
+[helpers]
 
-# A package contains two sections - "files" and "variables".
-# Both of those sections are optional - you can have only one if you want.
-
-# like cp / symlink
-# "./.foo" = "~/.foo"
-# [zsh.files]
-# zshrc = "~/.zshrc"
-
-# use variables in files {{ var }}
-# [zsh.variables]
-# prompt_color = "#00FF00"
-[bspwm]
+[default]
 depends = []
 
-[sxhkd]
-depends = []
-
-[kitty]
-depends = []
-
-[dunst]
-depends = []
-
-[bspwm.files]
-# depends = ["dependencies"]
-# Xinitrc = "~/.xinitrc"
+[default.files]
 bspwmrc = "~/.config/bspwm/bspwmrc"
-polybar = "~/.config/polybar/"
-
-[sxhkd.files]
+dunstrc = "~/.config/dunst/dunstrc"
+"kitty.conf" = "~/.config/kitty/kitty.conf"
+polybar = "~/.config/polybar"
 sxhkdrc = "~/.config/sxhkd/sxhkdrc"
 
-[kitty.files]
-kitty.conf = "~/.config/kitty/kitty.conf"
-
-[dunst.files]
-dunstrc = "~/.config/dunst/dunstrc"
+[default.variables]
