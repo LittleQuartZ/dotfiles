@@ -1,2 +1,45 @@
 /.dotter/*
 !/.dotter/global.toml
+
+# Compiled Lua sources
+./nvim/**/luac.out
+
+# luarocks build files
+./nvim/**/*.src.rock
+./nvim/**/*.zip
+./nvim/**/*.tar.gz
+
+# Object files
+./nvim/**/*.o
+./nvim/**/*.os
+./nvim/**/*.ko
+./nvim/**/*.obj
+./nvim/**/*.elf
+
+# Precompiled Headers
+./nvim/**/*.gch
+./nvim/**/*.pch
+
+# Libraries
+./nvim/**/*.lib
+./nvim/**/*.a
+./nvim/**/*.la
+./nvim/**/*.lo
+./nvim/**/*.def
+./nvim/**/*.exp
+
+# Shared objects (inc. Windows DLLs)
+./nvim/**/*.dll
+./nvim/**/*.so
+./nvim/**/*.so.*
+./nvim/**/*.dylib
+
+# Executables
+./nvim/**/*.exe
+./nvim/**/*.out
+./nvim/**/*.app
+./nvim/**/*.i*86
+./nvim/**/*.x86_64
+./nvim/**/*.hex
+
+./nvim/plugin/packer_compiled.lua
