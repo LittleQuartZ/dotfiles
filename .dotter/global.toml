@@ -9,5 +9,8 @@ dunstrc = "~/.config/dunst/dunstrc"
 "kitty.conf" = "~/.config/kitty/kitty.conf"
 polybar = "~/.config/polybar"
 sxhkdrc = "~/.config/sxhkd/sxhkdrc"
+zshrc = "~/.zshrc"
+nvim = "~/.config/nvim"
+picom = "~/.config/picom"
 
 [default.variables]
