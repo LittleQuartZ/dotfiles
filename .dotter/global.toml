@@ -12,5 +12,6 @@ sxhkdrc = "~/.config/sxhkd/sxhkdrc"
 zshrc = "~/.zshrc"
 nvim = "~/.config/nvim"
 picom = "~/.config/picom"
+chrome = "~/.mozilla/firefox/307rfa7n.default-release/chrome"
 
 [default.variables]
