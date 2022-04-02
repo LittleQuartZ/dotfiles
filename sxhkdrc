@@ -15,8 +15,14 @@ super + n
 	kitty -e ranger
 
 # program launcher
-super + shift + d
-	rofi -show run
+super + shift + {d,w}
+	rofi -show {run, window}
+
+super + shift + s
+  ~/.local/bin/screenshot
+
+super + shift + x
+  ~/.local/bin/powermenu
 
 # program launcher (Apps)
 super + d

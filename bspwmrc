@@ -1,12 +1,16 @@
 #! /bin/sh
 
-#bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor eDP-1 -d I II III IV V
-bspc monitor HDMI-1 -d VI VII VIII IX X
+xinput set-prop "MSFT0001:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1
 
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor eDP-1 -d 1 2 3 4 5
+bspc monitor HDMI-1 -d 6 7 8 9 0
 
 bspc config border_width         1
 bspc config window_gap          10
+
+bspc config normal_border_color #1e1e2e
+bspc config active_border_color #C9CBFF
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -17,13 +21,18 @@ bspc rule -r *
 
 bspc rule -a firefox desktop='^2' follow=on -o
 bspc rule -a Arandr state=floating
+bspc rule -a Lxappearance state=floating
 
 #pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd &
 xmodmap $HOME/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 usr/bin/dunst &
-$HOME/.config/polybar/launch.sh
+# $HOME/.config/polybar/launch.sh
 nitrogen --restore
-picom --config $HOME/.config/picom/picom.conf --experimental-backends
-xinput set-prop "MSFT0001:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1
+picom --config $HOME/.config/picom/picom.conf --experimental-backends &
+xsetroot -cursor_name left_ptr
+
+eww kill
+eww daemon && eww open bar &
+# [ ! -s ~/.config/mpd/pid ] && mpd &&

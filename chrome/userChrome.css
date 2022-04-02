@@ -27,7 +27,7 @@
   --mff-tab-pinned-bg: var(--magenta);
   --mff-tab-selected-bg: var(--magenta);
   --mff-tab-selected-color: var(--black);
-  --mff-tab-soundplaying-bg: var(--cyan);
+  --mff-tab-soundplaying-bg: var(--magenta);
   --mff-urlbar-color: var(--yellow);
   --mff-urlbar-focused-color: var(--white);
   --mff-urlbar-font-family: 'JetBrainsMono Nerd Font', serif;

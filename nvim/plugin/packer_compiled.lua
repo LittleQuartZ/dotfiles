@@ -238,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/syahdan/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["yuck.vim"] = {
+    loaded = true,
+    path = "/home/syahdan/.local/share/nvim/site/pack/packer/start/yuck.vim",
+    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 

@@ -119,3 +119,4 @@ source $ZSH/oh-my-zsh.sh
 # print on start
 #neofetch
 meow print --colour 31
+export PATH=$PATH:/home/syahdan/.spicetify
