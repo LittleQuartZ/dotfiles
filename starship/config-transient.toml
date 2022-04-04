@@ -1,0 +1,29 @@
+
+# format = """
+# [┌───────────────────>](bold green)
+# [│](bold green) $directory $git_commit
+# [└─>](bold green) """
+
+format = """$character"""
+
+# right_format = """$all"""
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[fill]
+symbol = "-"
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[▶](bold green)"
+error_symbol = "[▶](bold red)"
+
+[git_status]
+modified = '[\(!$count\)](bright-yellow)'
+staged = '[\(+$count\)](bright-green)'
+untracked = '[\(?$count\)(bright-red)]'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
