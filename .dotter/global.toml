@@ -13,5 +13,7 @@ zshrc = "~/.zshrc"
 nvim = "~/.config/nvim"
 picom = "~/.config/picom"
 chrome = "~/.mozilla/firefox/307rfa7n.default-release/chrome"
+"starship/starship.toml" = "~/.config/starship.toml"
+"starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
 
 [default.variables]
