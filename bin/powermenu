@@ -1,0 +1,12 @@
+#! /bin/sh
+
+#Script from ericmurphy's video
+
+chosen=$(printf "  shutdown\n  restart\n  lock" | rofi -dmenu -p " powermenu " -i)
+
+case "$chosen" in
+	"  shutdown") poweroff ;;
+	"  restart") reboot ;;
+	"  lock") bspc quit ;;
+	*) exit 1 ;;
+esac

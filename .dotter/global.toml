@@ -17,5 +17,6 @@ chrome = "~/.mozilla/firefox/307rfa7n.default-release/chrome"
 "starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
 eww = "~/.config/eww"
 rofi = "~/.config/rofi/config.rasi"
+bin = "~/.local/bin"
 
 [default.variables]
