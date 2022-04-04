@@ -25,7 +25,7 @@ error_symbol = "[▶](bold red)"
 [git_status]
 modified = '[\(!$count\)](bright-yellow)'
 staged = '[\(+$count\)](bright-green)'
-untracked = '[\(?$count\)(bright-red)]'
+untracked = '[\(?$count\)](bright-red)'
 
 # Disable the package module, hiding it from the prompt completely
 [package]
