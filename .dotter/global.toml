@@ -18,5 +18,6 @@ chrome = "~/.mozilla/firefox/307rfa7n.default-release/chrome"
 eww = "~/.config/eww"
 rofi = "~/.config/rofi/config.rasi"
 bin = "~/.local/bin"
+xmodmap = "~/.Xmodmap"
 
 [default.variables]
