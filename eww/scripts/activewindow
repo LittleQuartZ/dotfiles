@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# activeid = $(bspc query --nodes --node focused)
+getId() {
+  activeid=$(bspc query --nodes --node focused) 
+  activetitle=$(wmctrl -l | grep -i "$activeid" | cut -d " " -f 5-)
+  titlelength=$(echo $activetitle | awk '{print length}')
+  if [ $titlelength -lt 30 ]; then
+    echo " $activetitle"
+  else
+    echo " $activetitle" | cut -c 1-30 | sed 's/$/.../'
+  fi
+}
+
+getId
+bspc subscribe node_focus | while read -r _ ; do
+getId
+done
