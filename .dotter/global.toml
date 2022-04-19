@@ -4,20 +4,37 @@
 depends = []
 
 [default.files]
-bspwmrc = "~/.config/bspwm/bspwmrc"
-dunstrc = "~/.config/dunst/dunstrc"
-"kitty.conf" = "~/.config/kitty/kitty.conf"
-polybar = "~/.config/polybar"
-sxhkdrc = "~/.config/sxhkd/sxhkdrc"
-zshrc = "~/.zshrc"
-nvim = "~/.config/nvim"
-picom = "~/.config/picom"
-chrome = "~/.mozilla/firefox/307rfa7n.default-release/chrome"
-"starship/starship.toml" = "~/.config/starship.toml"
-"starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
-eww = "~/.config/eww"
-rofi = "~/.config/rofi/config.rasi"
+# nvim = "~/.config/nvim"
 bin = "~/.local/bin"
 xmodmap = "~/.Xmodmap"
 
-[default.variables]
+# [default.variables]
+
+[bspwm.files]
+bspwmrc = "~/.config/bspwm/bspwmrc"
+dunstrc = "~/.config/dunst/dunstrc"
+sxhkdrc = "~/.config/sxhkd/sxhkdrc"
+polybar = {target = "~/.config/polybar", type = "symbolic"}
+picom = "~/.config/picom"
+
+[starship.files]
+"starship/starship.toml" = "~/.config/starship.toml"
+"starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
+
+[zsh.files]
+zshrc = "~/.zshrc"
+
+[kitty.files]
+kitty = "~/.config/kitty/kitty.conf"
+
+[rofi.files]
+rofi = "~/.config/rofi/config.rasi"
+
+[eww.files]
+eww = "~/.config/eww"
+
+[firefox.files]
+chrome = "~/.mozilla/firefox/1rigvdzk.default-release/chrome"
+
+[nvchad.files]
+customchad = "~/.config/nvim/lua/custom"

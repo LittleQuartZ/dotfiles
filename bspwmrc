@@ -27,12 +27,12 @@ bspc rule -a Lxappearance state=floating
 sxhkd &
 xmodmap $HOME/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-usr/bin/dunst &
-# $HOME/.config/polybar/launch.sh
+# usr/bin/dunst &
+$HOME/.config/polybar/launch.sh
 nitrogen --restore
 picom --config $HOME/.config/picom/picom.conf --experimental-backends &
 xsetroot -cursor_name left_ptr
 
-eww kill
-eww daemon && eww open bar &
+# eww kill
+# eww daemon && eww open bar &
 # [ ! -s ~/.config/mpd/pid ] && mpd &&
