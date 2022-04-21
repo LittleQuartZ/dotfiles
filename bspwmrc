@@ -2,6 +2,9 @@
 
 xinput set-prop "MSFT0001:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1
 
+xmodmap $HOME/.Xmodmap &
+xrdb merge $HOME/.Xresources &
+
 #bspc monitor -d I II III IV V VI VII VIII IX X
 bspc monitor eDP-1 -d 1 2 3 4 5
 bspc monitor HDMI-1 -d 6 7 8 9 0
@@ -25,13 +28,12 @@ bspc rule -a Lxappearance state=floating
 
 #pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd &
-xmodmap $HOME/.Xmodmap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # usr/bin/dunst &
-$HOME/.config/polybar/launch.sh
-nitrogen --restore
+$HOME/.config/polybar/launch.sh bspwm &
+nitrogen --restore &
 picom --config $HOME/.config/picom/picom.conf --experimental-backends &
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
 # eww kill
 # eww daemon && eww open bar &
