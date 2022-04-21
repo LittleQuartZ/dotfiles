@@ -3,14 +3,14 @@ local M = {}
 -- make sure you maintain the structure of `core/default_config.lua` here,
 
 M.options = {
-   relativenumber = true,
+   relativenumber = false,
 }
 
 -- example of changing theme:
 M.ui = {
    italic_comments = true,
    theme = "catppuccin",
-   transparency = false,
+   transparency = true,
 }
 
 local userPlugins = require "custom.plugins" -- path to table
