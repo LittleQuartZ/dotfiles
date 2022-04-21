@@ -10,12 +10,23 @@ xmodmap = "~/.Xmodmap"
 
 # [default.variables]
 
+[openbox]
+depends = ["polybar"]
+
+[openbox.files]
+openbox = "~/.config/openbox"
+
+[bspwm]
+depends = ["polybar"]
+
 [bspwm.files]
 bspwmrc = "~/.config/bspwm/bspwmrc"
 dunstrc = "~/.config/dunst/dunstrc"
 sxhkdrc = "~/.config/sxhkd/sxhkdrc"
-polybar = {target = "~/.config/polybar", type = "symbolic"}
 picom = "~/.config/picom"
+
+[polybar.files]
+polybar = {target = "~/.config/polybar", type = "symbolic"}
 
 [starship.files]
 "starship/starship.toml" = "~/.config/starship.toml"
