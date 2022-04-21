@@ -9,5 +9,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch Polybar
 
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m USER=$(echo $USER) polybar top -c ~/.config/polybar/config.ini &
+    MONITOR=$m USER=$(echo $USER) polybar $1 -c ~/.config/polybar/config.ini &
   done
