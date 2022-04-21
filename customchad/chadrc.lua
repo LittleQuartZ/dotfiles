@@ -3,12 +3,14 @@ local M = {}
 -- make sure you maintain the structure of `core/default_config.lua` here,
 
 M.options = {
-  relativenumber = true,
+   relativenumber = true,
 }
 
 -- example of changing theme:
 M.ui = {
+   italic_comments = true,
    theme = "catppuccin",
+   transparency = false,
 }
 
 local userPlugins = require "custom.plugins" -- path to table
@@ -18,14 +20,14 @@ M.plugins = {
    install = userPlugins,
 
    status = {
-     alpha = true
+      alpha = true,
    },
 
-  options = {
-     lspconfig = {
-       setup_lspconf = "custom.plugins.lspconfig", -- or any path
-     }
-  }
+   options = {
+      lspconfig = {
+         setup_lspconf = "custom.plugins.lspconfig", -- or any path
+      },
+   },
 }
 
 M.mappings = {
@@ -35,10 +37,14 @@ M.mappings = {
    -- },
 
    plugins = {
-     nvimtree = {
-        toggle = "<C-b>",
-     },
-   }
+      nvimtree = {
+         toggle = "<leader>e",
+         focus = "",
+      },
+      lspconfig = {
+         set_loclist = "<leader>l",
+      },
+   },
 }
 
 return M
