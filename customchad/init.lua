@@ -9,7 +9,4 @@ map("n", "<leader>cc", ":Telescope <CR>")
 map("n", "<leader>q", ":q <CR>")
 
 vim.opt.scrolloff = 8
-
--- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
--- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
--- NOTE: the 4th argument in the map function is be a table i.e options but its most likely un-needed so dont worry about it
+vim.opt.showmode = false

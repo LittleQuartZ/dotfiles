@@ -38,8 +38,8 @@ M.mappings = {
 
    plugins = {
       nvimtree = {
-         toggle = "<leader>e",
-         focus = "",
+         toggle = "<C-n>",
+         focus = "<leader>e",
       },
       lspconfig = {
          set_loclist = "<leader>l",
