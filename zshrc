@@ -9,6 +9,7 @@ plugins=(git archlinux zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
+export TERM='kitty'
 
 meow print --colour 35
 eval "$(starship init zsh)"

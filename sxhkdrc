@@ -6,6 +6,9 @@
 super + Return
   kitty
 
+super + shift + Return
+  wezterm
+
 # firefox
 super + w
   firefox
@@ -137,6 +140,9 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
   bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + + shift + {Left,Down,Up,Right}
+  bspc node -v {-200 0,0 200,0 -200,200 0}
 
 # volume control
 XF86AudioLowerVolume
