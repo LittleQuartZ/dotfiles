@@ -4,8 +4,8 @@ italic_font      auto
 bold_italic_font auto
 font_size	 14
 
-map ctrl+shift+a>d set_background_opacity default
-map ctrl+shift+a>1 set_background_opacity 1.0
+map ctrl+shift+a>d set_background_opacity 0.7
+map ctrl+shift+a>1 set_background_opacity default
 
 # background_opacity 0.8
 
@@ -22,7 +22,7 @@ symbol_map U+F0BAF-U+F02A0 Material
 
 # The basic colors
 dynamic_background_opacity yes
-background_opacity 0.7
+background_opacity 1
 #foreground              #D9E0EE
 foreground              #f3faff
 background              #1E1E2E
