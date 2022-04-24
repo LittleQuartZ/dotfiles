@@ -153,8 +153,8 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>0</top>
-    <bottom>66</bottom>
+    <top>66</top>
+    <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -191,13 +191,13 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-C-S-Left">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-S-Right">
+    <keybind key="W-C-S-Right">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -259,17 +259,6 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-h">
       <action name="DirectionalCycleWindows">
@@ -294,7 +283,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-d">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -theme ~/.config/openbox/config.rasi</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -328,7 +317,61 @@
     <keybind key="W-A-S-r">
       <action name="Execute">
         <command>openbox --restart</command>
+        <command>sh ~/.config/openbox/autostart</command>
       </action>
+    </keybind>
+    <!-- moving window with arrow -->
+    <keybind key="W-S-Left">
+      <action name="MoveRelative">
+        <x>-50</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveRelative">
+        <x>50</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>50</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>-50</y>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveRelative">
+        <x>-5</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="MoveRelative">
+        <x>5</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>5</y>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="MoveRelative">
+        <x>0</x>
+        <y>-5</y>
+      </action>
+    </keybind>
+    <!-- window control -->
+    <keybind key="W-f">
+      <action name="ToggleMaximizeFull"/>
     </keybind>
     <!-- volume control -->
     <keybind key="XF86AudioRaiseVolume">
