@@ -21,11 +21,15 @@ M.plugins = {
 
    status = {
       alpha = true,
+      colorizer = true,
    },
 
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig", -- or any path
+      },
+      statusline = {
+         style = "arrow",
       },
    },
 }

@@ -8,6 +8,7 @@ return {
          require("custom.plugins.null-ls").setup()
       end,
    },
+   { "lambdalisue/suda.vim" },
    -- {
    --    "karb94/neoscroll.nvim",
    --    config = function()
