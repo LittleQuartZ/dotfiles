@@ -1,5 +1,8 @@
 [helpers]
 
+[awesome.files]
+awesome = {target="~/.config/awesome", type = "symbolic"}
+
 [default]
 depends = []
 
