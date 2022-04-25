@@ -1,5 +1,10 @@
 [helpers]
 
+[mpd.files]
+mpd = "~/.config/mpd/mpd.conf"
+mpDris2 = "~/.config/mpd/mpDris2.conf"
+ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
+
 [awesome.files]
 awesome = {target="~/.config/awesome", type = "symbolic"}
 
