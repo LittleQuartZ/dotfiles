@@ -1,13 +1,5 @@
 [helpers]
 
-[mpd.files]
-mpd = "~/.config/mpd/mpd.conf"
-mpDris2 = "~/.config/mpd/mpDris2.conf"
-ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
-
-[awesome.files]
-awesome = {target="~/.config/awesome", type = "symbolic"}
-
 [default]
 depends = []
 
@@ -18,18 +10,25 @@ xmodmap = "~/.Xmodmap"
 
 # [default.variables]
 
+[mpd.files]
+mpd = "~/.config/mpd/mpd.conf"
+mpDris2 = "~/.config/mpd/mpDris2.conf"
+ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
+
+[awesome.files]
+awesome = {target="~/.config/awesome", type = "symbolic"}
+
 [openbox]
-depends = ["polybar"]
+depends = ["polybar", "rofi", "dunst"]
 
 [openbox.files]
 openbox = "~/.config/openbox"
 
 [bspwm]
-depends = ["polybar"]
+depends = ["polybar","rofi","dunst"]
 
 [bspwm.files]
 bspwmrc = "~/.config/bspwm/bspwmrc"
-dunstrc = "~/.config/dunst/dunstrc"
 sxhkdrc = "~/.config/sxhkd/sxhkdrc"
 picom = "~/.config/picom"
 
@@ -53,7 +52,10 @@ rofi = "~/.config/rofi/config.rasi"
 eww = "~/.config/eww"
 
 [firefox.files]
-chrome = "~/.mozilla/firefox/1rigvdzk.default-release/chrome"
+chrome = "~/.mozilla/firefox/wlmgcclo.default-release/chrome"
 
 [nvchad.files]
 customchad = "~/.config/nvim/lua/custom"
+
+[dunst.files]
+dunstrc = "~/.config/dunst/dunstrc"
