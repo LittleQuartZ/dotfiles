@@ -6,8 +6,8 @@ xmodmap $HOME/.Xmodmap &
 xrdb merge $HOME/.Xresources &
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor eDP-1 -d 1 2 3 4 5
-bspc monitor HDMI-1 -d 6 7 8 9 0
+bspc monitor eDP -d 1 2 3 4 5
+bspc monitor HDMI-A-0 -d 6 7 8 9 0
 
 bspc config border_width         1
 bspc config window_gap          10
