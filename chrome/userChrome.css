@@ -1,15 +1,15 @@
 :root {
   /* Snazzy colours */
-  --bg: #1E1E2E;
-  --fg: #D9E0EE;
-  --black: #6E6C7E;
-  --red: #F28FAD;
-  --green: #ABE9B3;
-  --yellow: #FAE3B0;
-  --blue: #96CDFB;
-  --magenta: #DDB6F2;
-  --cyan: #89DCEB;
-  --white: #C3BAC6;
+  --bg: #323d43;
+  --fg: #d8cacc;
+  --black: #4a555b;
+  --red: #e68183;
+  --green: #a7c080;
+  --yellow: #dbbc7f;
+  --blue: #7fbbb3;
+  --magenta: #d699b6;
+  --cyan: #83c092;
+  --white: #d8caac;
 
   /* Minimal Functional Fox variables*/
   --mff-bg: var(--bg);
@@ -24,10 +24,10 @@
   --mff-tab-font-size: 11pt;
   --mff-tab-font-weight: 700;
   --mff-tab-height: 36px;
-  --mff-tab-pinned-bg: var(--magenta);
-  --mff-tab-selected-bg: var(--magenta);
+  --mff-tab-pinned-bg: var(--green);
+  --mff-tab-selected-bg: var(--green);
   --mff-tab-selected-color: var(--black);
-  --mff-tab-soundplaying-bg: var(--magenta);
+  --mff-tab-soundplaying-bg: var(--green);
   --mff-urlbar-color: var(--yellow);
   --mff-urlbar-focused-color: var(--white);
   --mff-urlbar-font-family: 'JetBrainsMono Nerd Font', serif;
@@ -38,8 +38,12 @@
   --mff-urlbar-results-font-size: 12pt;
   --mff-urlbar-results-font-weight: 700;
   --mff-urlbar-results-url-color: var(--yellow);
+  --mff-urlbar-popup-url-color: var(--yellow);
 
   /* Overriden Firefox variables*/
+  --autocomplete-popup-highlight-background: var(--green) !important;
+  --autocomplete-popup-highlight-color: var(--black) !important;
+  --autocomplete-popup-url-color: var(--black) !important;
   --autocomplete-popup-background: var(--mff-bg) !important;
   --default-arrowpanel-background: var(--mff-bg) !important;
   --default-arrowpanel-color: var(--white) !important;
@@ -49,6 +53,13 @@
   --urlbar-separator-color: transparent !important;
 }
 
+.urlbarView-url {
+  color: var(--mff-urlbar-popup-url-color) !important;
+}
+
+.urlbarView-row[selected] > .urlbarView-row-inner > .urlbarView-url {
+  color: var(--autocomplete-popup-highlight-color) !important
+}
 /*
   _____ _   ___ ___
  |_   _/_\ | _ ) __|
@@ -239,7 +250,7 @@ hbox.tab-content[pinned] .tab-text {
 
 .urlbarView-url,
 .search-panel-one-offs-container {
-  color: var(--mff-urlbar-results-url-color) !important;
+  color: var(--mff-urlbar-results-url-color);
   font-family: var(--mff-urlbar-font-family);
   font-weight: var(--mff-urlbar-results-font-weight);
   font-size: var(--mff-urlbar-font-size) !important;

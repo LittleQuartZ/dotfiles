@@ -3,17 +3,18 @@
 xinput set-prop "MSFT0001:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1
 
 xmodmap $HOME/.Xmodmap &
-xrdb merge $HOME/.Xresources &
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
 bspc monitor eDP -d 1 2 3 4 5
 bspc monitor HDMI-A-0 -d 6 7 8 9 0
 
-bspc config border_width         1
 bspc config window_gap          10
 
-bspc config normal_border_color #1e1e2e
-bspc config active_border_color #C9CBFF
+# bspc config normal_border_color "#323D43"
+# bspc config active_border_color "#a7c080"
+bspc config normal_border_color       '#323D43'
+bspc config active_border_color       '#323D43'
+bspc config focused_border_color      '#323D43'
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -26,15 +27,18 @@ bspc rule -a firefox desktop='^2' follow=on -o
 bspc rule -a Arandr state=floating
 bspc rule -a Lxappearance state=floating
 
-#pgrep -x sxhkd > /dev/null || sxhkd &
-sxhkd &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# usr/bin/dunst &
-$HOME/.config/polybar/launch.sh bspwm &
-nitrogen --restore &
-picom --config $HOME/.config/picom/picom.conf --experimental-backends &
-xsetroot -cursor_name left_ptr &
+s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
+pgrep -x sxhkd > /dev/null || sxhkd &
+# sxhkd &
+s /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+# usr/bin/dunst &
+s $HOME/.config/polybar/launch.sh bspwm 
+s nitrogen --restore 
+s picom --config $HOME/.config/picom/picom.conf --experimental-backends 
+s xsetroot -cursor_name left_ptr 
+s ~/.local/bin/brdr
+s nm-applet
 # eww kill
 # eww daemon && eww open bar &
 # [ ! -s ~/.config/mpd/pid ] && mpd &&

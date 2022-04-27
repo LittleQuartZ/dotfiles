@@ -9,8 +9,8 @@ M.options = {
 -- example of changing theme:
 M.ui = {
    italic_comments = true,
-   theme = "catppuccin",
-   transparency = true,
+   theme = "everforest",
+   transparency = false,
 }
 
 local userPlugins = require "custom.plugins" -- path to table

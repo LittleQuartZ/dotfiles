@@ -338,50 +338,50 @@
     <!-- moving window with arrow -->
     <keybind key="W-S-Left">
       <action name="MoveRelative">
-        <x>-50</x>
+        <x>-200</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-S-Right">
       <action name="MoveRelative">
-        <x>50</x>
+        <x>200</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-S-Down">
       <action name="MoveRelative">
         <x>0</x>
-        <y>50</y>
+        <y>200</y>
       </action>
     </keybind>
     <keybind key="W-S-Up">
       <action name="MoveRelative">
         <x>0</x>
-        <y>-50</y>
+        <y>-200</y>
       </action>
     </keybind>
     <keybind key="W-Left">
       <action name="MoveRelative">
-        <x>-5</x>
+        <x>-20</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-Right">
       <action name="MoveRelative">
-        <x>5</x>
+        <x>20</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="MoveRelative">
         <x>0</x>
-        <y>5</y>
+        <y>20</y>
       </action>
     </keybind>
     <keybind key="W-Up">
       <action name="MoveRelative">
         <x>0</x>
-        <y>-5</y>
+        <y>-20</y>
       </action>
     </keybind>
     <!-- window control -->
