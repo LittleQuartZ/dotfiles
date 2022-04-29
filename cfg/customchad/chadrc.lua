@@ -1,54 +1,32 @@
 local M = {}
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
+-- example of changing theme:
 
 M.options = {
-   relativenumber = false,
+  user = function()
+    vim.opt.scrolloff = 8
+    vim.opt.showmode = false
+    vim.g.did_load_filetypes = 1
+  end,
 }
 
--- example of changing theme:
 M.ui = {
-   italic_comments = true,
-   theme = "everforest",
-   transparency = false,
+  theme = "everforest",
 }
 
-local userPlugins = require "custom.plugins" -- path to table
+userPlugins = require "custom.plugins"
 
 M.plugins = {
-
-   install = userPlugins,
-
-   status = {
-      alpha = true,
-      colorizer = true,
-   },
-
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig", -- or any path
-      },
-      statusline = {
-         style = "arrow",
-      },
-   },
-}
-
-M.mappings = {
-
-   -- misc = {
-   --    close_buffer = "<leader>c",
-   -- },
-
-   plugins = {
-      nvimtree = {
-         toggle = "<C-n>",
-         focus = "<leader>e",
-      },
-      lspconfig = {
-         set_loclist = "<leader>l",
-      },
-   },
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
+    },
+    statusline = {
+      style = "block", -- default/round/slant/block/arrow
+    },
+  },
+  user = userPlugins,
 }
 
 return M
