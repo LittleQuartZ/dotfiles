@@ -30,7 +30,7 @@
     text_icon_padding = 0
 
     frame_width = 3
-    frame_color = "#A7C080"
+    frame_color = "{{ accent }}"
     separator_color = "#00000000"
 
     sort = yes
@@ -97,17 +97,17 @@
     #default_icon = /path/to/icon
 
 [urgency_low]
-background = "#2B3339"
-foreground = "#d3c6aa"
+background = "{{ bg0 }}"
+foreground = "{{ fg }}"
 
 [urgency_normal]
-background = "#2B3339"
-foreground = "#d3c6aa"
+background = "{{ bg0 }}"
+foreground = "{{ fg }}"
 
 [urgency_critical]
-background = "#2B3339"
-foreground = "#d3c6aa"
-frame_color = "#e69875"
+background = "{{ bg0 }}"
+foreground = "{{ fg }}"
+frame_color = "{{ orange }}"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

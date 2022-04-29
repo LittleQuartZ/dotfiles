@@ -2,26 +2,29 @@
 # double borders
 # needs chwb2 from wmutils/opt
 
-outer='0x323d43'   # outer
-inner1='0xa7c080'  # focused
-inner2='0x323d43'  # normal
+outer='0x{{ replace bg0 "#" "" }}'     # outer
+inner1='0x{{ replace accent "#" "" }}' # focused
+inner2='0x{{ replace bg0 "#" "" }}'    # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 
 targets() {
-	case $1 in
-		focused) bspc query -N -n .local.focused.\!fullscreen;;
-		normal)  bspc query -N -n .\!focused.\!fullscreen
-	esac
+  case $1 in
+    focused) bspc query -N -n .local.focused.\!fullscreen ;;
+    normal) bspc query -N -n .\!focused.\!fullscreen ;;
+  esac
 }
 bspc config border_width 10
 
 draw() { /usr/bin/chwb2 -I "$inner" -O "$outer" -i "2" -o "8" $*; }
 
 # initial draw, and then subscribe to events
-{ echo; bspc subscribe node_geometry node_focus; } |
-	while read -r _; do
-		[ "$v" ] || v='abcdefg'
-		inner=$inner1 draw $(targets focused)
-		inner=$inner2 draw $(targets  normal)
-	done
+{
+  echo
+  bspc subscribe node_geometry node_focus
+} |
+  while read -r _; do
+    [ "$v" ] || v='abcdefg'
+    inner=$inner1 draw $(targets focused)
+    inner=$inner2 draw $(targets normal)
+  done

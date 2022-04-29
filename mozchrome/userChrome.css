@@ -1,15 +1,16 @@
 :root {
   /* Snazzy colours */
-  --bg: #323d43;
-  --fg: #d8cacc;
-  --black: #4a555b;
-  --red: #e68183;
-  --green: #a7c080;
-  --yellow: #dbbc7f;
-  --blue: #7fbbb3;
-  --magenta: #d699b6;
-  --cyan: #83c092;
-  --white: #d8caac;
+  --bg: {{ bg0 }};
+  --fg: {{ fg }};
+  --black: {{ bg2 }};
+  --red: {{ red }};
+  --green: {{ green }};
+  --yellow: {{ yellow }};
+  --blue: {{ blue }};
+  --magenta: {{ purple }};
+  --cyan: {{ aqua }};
+  --white: {{ fg }};
+  --accent: {{ accent }};
 
   /* Minimal Functional Fox variables*/
   --mff-bg: var(--bg);
@@ -24,10 +25,10 @@
   --mff-tab-font-size: 11pt;
   --mff-tab-font-weight: 700;
   --mff-tab-height: 36px;
-  --mff-tab-pinned-bg: var(--green);
-  --mff-tab-selected-bg: var(--green);
+  --mff-tab-pinned-bg: var(--accent);
+  --mff-tab-selected-bg: var(--accent);
   --mff-tab-selected-color: var(--black);
-  --mff-tab-soundplaying-bg: var(--green);
+  --mff-tab-soundplaying-bg: var(--accent);
   --mff-urlbar-color: var(--yellow);
   --mff-urlbar-focused-color: var(--white);
   --mff-urlbar-font-family: 'JetBrainsMono Nerd Font', serif;
@@ -41,7 +42,7 @@
   --mff-urlbar-popup-url-color: var(--yellow);
 
   /* Overriden Firefox variables*/
-  --autocomplete-popup-highlight-background: var(--green) !important;
+  --autocomplete-popup-highlight-background: var(--accent) !important;
   --autocomplete-popup-highlight-color: var(--black) !important;
   --autocomplete-popup-url-color: var(--black) !important;
   --autocomplete-popup-background: var(--mff-bg) !important;
@@ -241,7 +242,7 @@ hbox.tab-content[pinned] .tab-text {
 }
 
 .urlbarView-row[type='bookmark'] > span {
-  color: var(--green) !important;
+  color: var(--accent) !important;
 }
 
 .urlbarView-row[type='switchtab'] > span {

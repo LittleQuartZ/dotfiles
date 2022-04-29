@@ -1,0 +1,56 @@
+!! Global
+*.text.justify: center
+window.handle.width: 0
+window.client.padding.width: 0
+window.client.padding.height: 0
+border.Width: 0
+padding.width: 15
+
+!! Menu
+menu.title.text.justify: center
+menu.overlap.x: -20
+menu.overlap: 0
+menu.border.color: {{ bg0 }}
+menu.border.width: 10
+menu.title.text.justify: center
+menu.title.bg: flat solid
+menu.title.bg.color: {{ bg0 }}
+menu.title.text.color: #9999a8
+menu.items.bg: flat solid
+menu.items.bg.color: {{ bg0 }}
+menu.items.text.color: #9999a8
+menu.items.disabled.text.color: #9999a8
+menu.items.active.bg: flat solid
+menu.items.active.bg.color:  {{ bg4 }}
+menu.items.active.text.color: {{ fg }}
+
+!! Active Windows
+window.active.title.bg: flat solid
+window.active.title.bg.color: {{ bg0 }}
+window.active.label.bg: parentrelative
+window.active.label.text.color: {{ fg }}
+window.active.button.*.bg: parentrelative
+window.active.button.max.*.image.color: {{ green }}
+window.active.button.iconify.*.image.color: {{ yellow }}
+window.active.button.close.*.image.color: {{ red }}
+window.active.button.max.pressed.image.color: {{ grey0 }}
+window.active.button.iconify.pressed.image.color: {{ grey0 }}
+window.active.button.close.pressed.image.color: {{ grey0 }}
+
+!! Inactive Windows
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: {{ bg0 }}
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: {{ bg4 }}
+window.inactive.button.*.bg: parentrelative
+window.inactive.button.*.image.color:  {{ grey0 }}
+window.inactive.button.max.hover.image.color : {{ green }}
+window.inactive.button.iconify.hover.image.color : {{ yellow }}
+window.inactive.button.close.hover.image.color : {{ red }}
+
+osd.bg: flat
+osd.bg.color: {{ bg3 }}
+osd.border.Width: 5
+osd.border.color: {{ bg3 }}
+osd.inactive.label.text.color: {{ grey0 }}
+osd.active.label.text.color: {{ accent }}

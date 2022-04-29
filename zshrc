@@ -50,7 +50,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#484E5B,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg={{ grey0 }},underline"
 
 # tty
 # if [ "$TERM" = "linux" ] ; then
@@ -58,22 +58,22 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#484E5B,underline"
 # fi
 
 if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P02B3339" #black
-    echo -en "\e]P87a8478" #darkgrey
-    echo -en "\e]P1e67e80" #darkred
-    echo -en "\e]P9e67e80" #red
-    echo -en "\e]P2a7c080" #darkgreen
-    echo -en "\e]PAa7c080" #green
-    echo -en "\e]P3e69875" #brown
-    echo -en "\e]PBdbbc7f" #yellow
-    echo -en "\e]P47fbbb3" #darkblue
-    echo -en "\e]PC7fbbb3" #blue
-    echo -en "\e]P5d699b6" #darkmagenta
-    echo -en "\e]PDd699b6" #magenta
-    echo -en "\e]P683c092" #darkcyan
-    echo -en "\e]PE83c092" #cyan
-    echo -en "\e]P7d3c6aa" #lightgrey
-    echo -en "\e]PFfff9e8" #white
+    echo -en "\e]P0{{replace bg0 "#" ""}}" #black
+    echo -en "\e]P8{{replace grey0 "#" ""}}" #darkgrey
+    echo -en "\e]P1{{replace red "#" ""}}" #darkred
+    echo -en "\e]P9{{replace red "#" ""}}" #red
+    echo -en "\e]P2{{replace green "#" ""}}" #darkgreen
+    echo -en "\e]PA{{replace green "#" ""}}" #green
+    echo -en "\e]P3{{replace orange "#" ""}}" #brown
+    echo -en "\e]PB{{replace yellow "#" ""}}" #yellow
+    echo -en "\e]P4{{replace blue "#" ""}}" #darkblue
+    echo -en "\e]PC{{replace blue "#" ""}}" #blue
+    echo -en "\e]P5{{replace purple "#" ""}}" #darkmagenta
+    echo -en "\e]PD{{replace purple "#" ""}}" #magenta
+    echo -en "\e]P6{{replace aqua "#" ""}}" #darkcyan
+    echo -en "\e]PE{{replace aqua "#" ""}}" #cyan
+    echo -en "\e]P7{{replace grey2 "#" ""}}" #lightgrey
+    echo -en "\e]PF{{replace fg "#" ""}}" #white
     clear #for background artifacting
 fi
 
@@ -133,10 +133,12 @@ alias mv='mv -v'
 alias cp='cp -vr'
 alias rm='rm -vr'
 
+alias sctl='sudo systemctl'
+
 alias gcb='git branch --list | fzf | sed 's/\*//' | xargs -ro git checkout'
 alias glf="git log --pretty='format:%C(auto)%aN %C(auto)%h (%s, %as)' | fzf | cut -d ' ' -f 2 | xargs -ro git log -p -n 1"
 
-export FZF_DEFAULT_OPTS='--color=bg+:#4a555b,bg:#323D43,spinner:#e69875,hl:#e67e80 --color=fg:#d3c6aa,header:#e67e80,info:#d699b6,pointer:#e69875 --color=marker:#e69875,fg+:#dbbc7f,prompt:#d699b6,hl+:#e67e80'
+export FZF_DEFAULT_OPTS='--color=bg+:{{ bg3 }},bg:{{ bg0 }},spinner:{{ orange }},hl:{{ red }} --color=fg:{{ fg }},header:{{ red }},info:{{ purple }},pointer:{{ orange }} --color=marker:{{ orange }},fg+:{{ yellow }},prompt:{{ purple }},hl+:{{ red }}'
 export FZF_DEFAULT_COMMAND='rg --files'
 
 path+=('/home/syahdan/.local/bin')

@@ -1,0 +1,11 @@
+* {
+    bg-col:  {{ bg0 }};
+    bg-col-light: {{ bg0 }};
+    border-col: {{ accent }};
+    selected-col: {{ bg0 }};
+    blue: {{ accent }};
+    fg-col: {{ grey0 }};
+    fg-col2: {{ accent }};
+    grey: {{ grey0 }};
+    width: 600;
+}

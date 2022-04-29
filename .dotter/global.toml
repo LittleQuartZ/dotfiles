@@ -1,63 +1,95 @@
 [helpers]
 
+[colors.variables]
+schemename = "Everforest"
+bg0 = "#2b3339"
+bg1 = "#323c41"
+bg2 = "#3a454a"
+bg3 = "#445055"
+bg4 = "#4c555b"
+bg5 = "#53605c"
+fg = "#d3c6aa"
+red = "#e67e80"
+orange = "#e69875"
+yellow = "#dbbc7f"
+green = "#a7c080"
+aqua = "#83c092"
+blue = "#7fbbb3"
+purple = "#d699b6"
+grey0 = "#7a8478"
+grey1 = "#859289"
+grey2 = "#9da9a0"
+accent = "#a7c080"
+# schemename = "Catppuccin"
+# bg0 = "#161320"
+# bg1 = "#1a1826"
+# bg2 = "#1e1e2e"
+# bg3 = "#302d41"
+# bg4 = "#575268"
+# bg5 = "#716c82"
+# fg = "#d9e0ee"
+# red = "#f28fad"
+# orange = "#F8BD96"
+# yellow = "#FAE3B0"
+# green = "#ABE9B3"
+# aqua = "#89DCEB"
+# blue = "#96CDFB"
+# purple = "#DDB6F2"
+# grey0 = "#6E6C7E"
+# grey1 = "#988BA2"
+# grey2 = "#C3BAC6"
+# accent = "#DDB6F2"
+
 [default]
 depends = []
+files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap" }
 
-[default.files]
-# nvim = "~/.config/nvim"
-bin = "~/.local/bin"
-xmodmap = "~/.Xmodmap"
-# [default.variables]
-
-[awesome.files]
-"cfg/awesome" = {target="~/.config/awesome", type = "symbolic"}
+[awesome]
+files = { "cfg/awesome" = { target="~/.config/awesome", type = "symbolic" } }
 
 [bspwm]
-depends = ["polybar","rofi","dunst"]
+depends = ["polybar", "rofi", "dunst", "colors"]
+files = {"cfg/bspwmrc" = "~/.config/bspwm/bspwmrc", "cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc", "cfg/picom/picom.conf" = "~/.config/bspwm/picom.conf"}
 
-[bspwm.files]
-"cfg/bspwmrc" = "~/.config/bspwm/bspwmrc"
-"cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc"
-"cfg/picom/picom.conf" = "~/.config/bspwm/picom.conf"
+[dunst]
+files = { "cfg/dunstrc" = "~/.config/dunst/dunstrc" }
 
-[dunst.files]
-"cfg/dunstrc" = "~/.config/dunst/dunstrc"
+[eww]
+files = { "cfg/eww" = "~/.config/eww" }
 
-[eww.files]
-"cfg/eww" = "~/.config/eww"
+[firefox]
+depends = ["colors"]
+files = { "mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome" }
 
-[firefox.files]
-"mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome"
+[kitty]
+depends = ["colors"]
+files = { "cfg/kitty" = "~/.config/kitty/kitty.conf" }
 
-[kitty.files]
-"cfg/kitty" = "~/.config/kitty/kitty.conf"
+[mpd]
+files = { mpd = "~/.config/mpd/mpd.conf", mpDris2 = "~/.config/mpd/mpDris2.conf", ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"} }
 
-[mpd.files]
-mpd = "~/.config/mpd/mpd.conf"
-mpDris2 = "~/.config/mpd/mpDris2.conf"
-ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
-
-[nvchad.files]
-"cfg/customchad" = "~/.config/nvim/lua/custom"
+[nvchad]
+files = { "cfg/customchad" = "~/.config/nvim/lua/custom" }
 
 [openbox]
-depends = ["polybar", "rofi", "dunst"]
+depends = ["polybar", "rofi", "dunst", "colors"]
+files = { "cfg/openbox" = "~/.config/openbox", "themes/openbox-3" = "~/.themes/openbox/openbox-3" }
 
-[openbox.files]
-"cfg/openbox" = "~/.config/openbox"
+[polybar]
+depends = ["colors"]
+files = { "cfg/polybar" = "~/.config/polybar" }
 
-[polybar.files]
-"cfg/polybar" = "~/.config/polybar"
+[ranger]
+files = { "cfg/ranger" = "~/.config/ranger" }
 
-[ranger.files]
-"cfg/ranger" = "~/.config/ranger"
+[rofi]
+depends = ["colors"]
+files = { "cfg/rofi" = "~/.config/rofi" }
 
-[rofi.files]
-"cfg/rofi" = "~/.config/rofi"
+[starship]
+depends = ["colors"]
+files = { "cfg/starship/starship.toml" = "~/.config/starship.toml", "cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml" }
 
-[starship.files]
-"cfg/starship/starship.toml" = "~/.config/starship.toml"
-"cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
-
-[zsh.files]
-zshrc = "~/.zshrc"
+[zsh]
+depends = ["colors"]
+files = { zshrc = "~/.zshrc" }

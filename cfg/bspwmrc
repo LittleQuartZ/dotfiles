@@ -21,9 +21,9 @@ config window_gap 10
 
 # bspc config normal_border_color "#323D43"
 # bspc config active_border_color "#a7c080"
-config normal_border_color '#323D43'
-config active_border_color '#323D43'
-config focused_border_color '#323D43'
+config normal_border_color {{ bg0 }}
+config active_border_color {{ bg0 }}
+config focused_border_color {{ bg0 }}
 
 config split_ratio 0.52
 config borderless_monocle true

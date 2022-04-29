@@ -15,43 +15,43 @@ window_padding_width 10
 symbol_map U+F0BAF-U+F02A0 Material
 # vim:ft=kitty
 
-# Everforest @sainhhe
+# {{ schemename }}
 
-foreground            #d8cacc
-background            #2B3339
-selection_foreground  #323c41
-selection_background  #4c555b
-url_color             #7fbbb3
-cursor                #a7c080
+foreground            {{ fg }}
+background            {{ bg0 }}
+selection_foreground  {{ bg1 }}
+selection_background  {{ accent }}
+url_color             {{ blue }}
+cursor                {{ accent }}
 
 # black
-color0   #4a555b
-color8   #525c62
+color0   {{ bg3 }}
+color8   {{ bg4 }}
 
 # red
-color1   #e68183
-color9   #e68183
+color1   {{ red }}
+color9   {{ red }}
 
 # green
-color2   #a7c080
-color10  #a7c080
+color2   {{ green }}
+color10  {{ green }}
 
 # yellow
-color3   #dbbc7f
-color11  #dbbc7f
+color3   {{ yellow }}
+color11  {{ yellow }}
 
 # blue
-color4  #7fbbb3
-color12 #7fbbb3
+color4  {{ blue }}
+color12 {{ blue }}
 
 # magenta
-color5   #d699b6
-color13  #d699b6
+color5   {{ purple }}
+color13  {{ purple }}
 
 # cyan
-color6   #83c092
-color14  #83c092
+color6   {{ aqua }}
+color14  {{ aqua }}
 
 # white
-color7   #d8caac
-color15  #d8caac
+color7   {{ fg }}
+color15  {{ fg }}

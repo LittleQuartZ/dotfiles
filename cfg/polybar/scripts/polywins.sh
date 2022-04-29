@@ -3,16 +3,16 @@
 
 # SETTINGS { ---
 
-active_text_color="#a7c080"
+active_text_color="{{ accent }}"
 active_bg=
 active_underline="#ECB3B2"
 
-inactive_text_color="#829181"
+inactive_text_color="{{ grey0 }}"
 inactive_bg=
 inactive_underline=
 
 separator="·"
-separator_color="#dbbc7f"
+separator_color="{{ yellow }}"
 
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"

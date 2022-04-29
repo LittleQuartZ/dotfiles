@@ -16,7 +16,7 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "everforest"
+@theme "dynamic"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
