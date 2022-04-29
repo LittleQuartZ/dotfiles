@@ -1,0 +1,187 @@
+################
+# applications #
+################
+
+
+super + {Return,n,shift + Return}
+  {kitty,kitty -e ranger,wezterm}
+
+super + w
+  bspc rule -a firefox desktop='^2' follow=on -o; \
+  firefox
+
+super + shift + {d,Tab}
+  rofi -show {run,window}
+
+super + d
+  rofi -show drun
+
+super + shift + s
+  ~/.local/bin/screenshot
+
+super + shift + x
+  ~/.local/bin/powermenu
+
+super + shift + m
+  ~/.local/bin/bspcl
+
+super + p
+  ~/.local/bin/xcolor-pick
+
+
+##########
+# system #
+##########
+
+
+# description: sxhkd reload
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# description: quit/restart bspwm
+super + alt + {e,r}
+  bspc {quit,wm -r}
+
+# description: volume control
+XF86AudioLowerVolume
+  ~/.local/bin/volume down
+XF86AudioRaiseVolume
+  ~/.local/bin/volume up
+XF86AudioMute
+  ~/.local/bin/volume mute
+
+# description: brightness up + (shift)
+XF86MonBrightnessUp
+  light -A 5
+shift + XF86MonBrightnessUp
+  light -A 20
+
+# description: brightness down + (shift)
+XF86MonBrightnessDown
+  light -U 5
+shift + XF86MonBrightnessDown
+  light -U 20
+
+
+#############
+# preselect #
+#############
+
+
+# description: preselect the direction
+super + ctrl + {h,j,k,l}
+  bspc node -p {west,south,north,east}
+
+# description: preselect the ratio
+super + ctrl + {1-9}
+  bspc node -o 0.{1-9}
+
+# description: cancel the preselection for the focused node
+super + ctrl + c
+  bspc node -p cancel
+
+# description: cancel the preselection for the focused desktop
+super + ctrl + shift + c
+  bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# description: send the focused node to the newest preselected node
+super + ctrl + shift + space
+  bspc node focused.local -n newest.!automatic.local
+
+
+##############
+# focus/swap #
+##############
+
+
+# description: focus/swap the node in the given direction
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+# description: focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# description: swap the current node with the biggest window
+super + g
+  bspc node -s biggest.window
+
+# description: focus the last node/desktop
+super + Tab
+  bspc desktop -f last
+
+{_,shift +} alt + Tab
+  bspc node {next,prev}.local.window -f
+
+# description: focus the node for the given path jump
+super + {p,b,comma,period}
+  bspc node -f @{parent,brother,first,second}
+
+# description: focus the next/previous window in the current desktop
+#super + {_,shift + }c
+# bspc node -f {next,prev}.local.!hidden.window
+
+# description: focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+  bspc desktop -f {prev,next}.local
+
+# description: focus the older or newer node in the focus history
+super + {o,i}
+  bspc wm -h off; \
+  bspc node {older,newer} -f; \
+  bspc wm -h on
+
+
+######################
+# node/window manage #
+######################
+
+
+# description: close and kill
+super +{_,shift +}q
+  bspc node -{c,k}
+
+# description: set the window state
+super + {t,shift + t,s,f}
+  bspc node -t { tiled, pseudo_tiled, floating, fullscreen}
+
+# description: set the node flags
+super + ctrl + {m,x,s,z}
+  bspc node -g {marked,locked,sticky,private }
+
+
+###############
+# move/resize #
+###############
+
+
+# description: expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# description: contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# description: move a floating window
+super + {Left,Down,Up,Right}
+  bspc node -v {-20 0,0 20,0 -20,20 0}
+super + shift + {Left,Down,Up,Right}
+  bspc node -v {-200 0,0 200,0 -200,200 0}
+
+
+##########
+# layout #
+##########
+
+
+# description: alternate between the tiled and monocle layout
+super + m
+  bspc desktop -l next
+
+super + k
+  bat Desktop/dotfiles/sxhkdrc | grep description -A1 | sed "/--/d" | awk 'NR%2{printf "%s | ",$0;next;}1' | rofi -dmenu -p
+
+# lock screen
+#super + x
+#  betterlockscreen -l

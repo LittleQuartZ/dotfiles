@@ -16,46 +16,46 @@ mpDris2 = "~/.config/mpd/mpDris2.conf"
 ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
 
 [awesome.files]
-awesome = {target="~/.config/awesome", type = "symbolic"}
+"cfg/awesome" = {target="~/.config/awesome", type = "symbolic"}
 
 [openbox]
 depends = ["polybar", "rofi", "dunst"]
 
 [openbox.files]
-openbox = "~/.config/openbox"
+"cfg/openbox" = "~/.config/openbox"
 
 [bspwm]
 depends = ["polybar","rofi","dunst"]
 
 [bspwm.files]
-bspwmrc = "~/.config/bspwm/bspwmrc"
-sxhkdrc = "~/.config/sxhkd/sxhkdrc"
-picom = "~/.config/picom"
+"cfg/bspwmrc" = "~/.config/bspwm/bspwmrc"
+"cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc"
+"cfg/picom" = "~/.config/bspwm/picom.conf"
 
 [polybar.files]
-polybar = {target = "~/.config/polybar", type = "symbolic"}
+"cfg/polybar" = {target = "~/.config/polybar", type = "symbolic"}
 
 [starship.files]
-"starship/starship.toml" = "~/.config/starship.toml"
-"starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
+"cfg/starship/starship.toml" = "~/.config/starship.toml"
+"cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
 
 [zsh.files]
 zshrc = "~/.zshrc"
 
 [kitty.files]
-kitty = "~/.config/kitty/kitty.conf"
+"cfg/kitty" = "~/.config/kitty/kitty.conf"
 
 [rofi.files]
-rofi = "~/.config/rofi/config.rasi"
+"cfg/rofi" = "~/.config/rofi"
 
 [eww.files]
-eww = "~/.config/eww"
+"cfg/eww" = "~/.config/eww"
 
 [firefox.files]
-chrome = "~/.mozilla/firefox/wlmgcclo.default-release/chrome"
+"mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome"
 
 [nvchad.files]
-customchad = "~/.config/nvim/lua/custom"
+"cfg/customchad" = "~/.config/nvim/lua/custom"
 
 [dunst.files]
-dunstrc = "~/.config/dunst/dunstrc"
+"cfg/dunstrc" = "~/.config/dunst/dunstrc"

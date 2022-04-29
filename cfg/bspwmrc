@@ -1,0 +1,60 @@
+#! /bin/sh
+
+start() {
+  pkill -x "$1"
+  {
+    sleep 0.2
+    "$@" &
+  }
+}
+rule() { bspc rule -a "$@" & }
+config() { bspc config "$@" & }
+
+xmodmap "$HOME/.Xmodmap" &
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor eDP -d 1 2 3 4 5
+bspc monitor HDMI-A-0 -d 6 7 8 9 0
+
+config window_gap 10
+
+# bspc config normal_border_color "#323D43"
+# bspc config active_border_color "#a7c080"
+config normal_border_color '#323D43'
+config active_border_color '#323D43'
+config focused_border_color '#323D43'
+
+config split_ratio 0.52
+config borderless_monocle true
+config gapless_monocle true
+config focus_follows_pointer true
+
+# desktops=$(bspc query -D --names)
+#
+# for desktop in $desktops
+# do
+#   bsp-layout set tiled $desktop
+# done
+
+bspc rule -r *
+
+floating=("Arandr" "Lxappearance" "Pavucontrol")
+
+for c in "${floating[@]}"; do
+  rule $c state=floating
+done
+
+pgrep -x sxhkd >/dev/null || sxhkd &
+# sxhkd &
+start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# usr/bin/dunst &
+start $HOME/.config/polybar/launch.sh bspwm
+start nitrogen --restore
+start picom --config $HOME/.config/bspwm/picom.conf --experimental-backends
+start xsetroot -cursor_name left_ptr
+start ~/.local/bin/brdr
+start nm-applet
+
+# eww kill
+# eww daemon && eww open bar &
+# [ ! -s ~/.config/mpd/pid ] && mpd &&

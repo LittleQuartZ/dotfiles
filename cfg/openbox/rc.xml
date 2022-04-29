@@ -298,7 +298,7 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>rofi -show drun -theme ~/.config/openbox/config.rasi</command>
+        <command>rofi -modi window,drun -show drun -theme ~/.config/rofi/adi.rasi</command>
       </action>
     </keybind>
     <keybind key="W-Return">

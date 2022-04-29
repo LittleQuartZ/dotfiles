@@ -10,7 +10,7 @@
     scale = 0
 
     origin = top-left
-    offset = 20x20
+    offset = 20x60
 
     notification_limit = 0
     indicate_hidden = yes
