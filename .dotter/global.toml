@@ -18,7 +18,7 @@ depends = ["polybar","rofi","dunst"]
 [bspwm.files]
 "cfg/bspwmrc" = "~/.config/bspwm/bspwmrc"
 "cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc"
-"cfg/picom" = "~/.config/bspwm/picom.conf"
+"cfg/picom/picom.conf" = "~/.config/bspwm/picom.conf"
 
 [dunst.files]
 "cfg/dunstrc" = "~/.config/dunst/dunstrc"

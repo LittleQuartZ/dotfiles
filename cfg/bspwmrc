@@ -7,6 +7,7 @@ start() {
     "$@" &
   }
 }
+
 rule() { bspc rule -a "$@" & }
 config() { bspc config "$@" & }
 
@@ -36,21 +37,21 @@ config focus_follows_pointer true
 #   bsp-layout set tiled $desktop
 # done
 
-bspc rule -r *
+bspc rule -r \*
 
-floating=("Arandr" "Lxappearance" "Pavucontrol")
+floating="Arandr Lxappearance Pavucontrol NMTUI"
 
-for c in "${floating[@]}"; do
-  rule $c state=floating
+for c in $floating; do
+  rule "$c" state=floating
 done
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 # sxhkd &
 start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # usr/bin/dunst &
-start $HOME/.config/polybar/launch.sh bspwm
+start "$HOME"/.config/polybar/launch.sh bspwm
 start nitrogen --restore
-start picom --config $HOME/.config/bspwm/picom.conf --experimental-backends
+start picom --config "$HOME"/.config/bspwm/picom.conf --experimental-backends
 start xsetroot -cursor_name left_ptr
 start ~/.local/bin/brdr
 start nm-applet

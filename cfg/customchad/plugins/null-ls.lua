@@ -17,8 +17,8 @@ local sources = {
 
   -- Shell
   b.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
-  -- b.code_actions.shellcheck,
-  -- b.diagnostics.shellcheck,
+  b.code_actions.shellcheck,
+  b.diagnostics.shellcheck,
 }
 
 local M = {}
