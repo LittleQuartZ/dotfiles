@@ -27,7 +27,7 @@ local hotkeys_popup = require "awful.hotkeys_popup"
 -- when client with a matching name is opened:
 require "awful.hotkeys_popup.keys"
 
--- {{{ Error handling
+-- { Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 naughty.connect_signal("request::display_error", function(message, startup)
@@ -37,9 +37,9 @@ naughty.connect_signal("request::display_error", function(message, startup)
     message = message,
   }
 end)
--- }}}
+-- }
 
--- {{{ Variable definitions
+-- { Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gfs.get_configuration_dir() .. "xresources/theme.lua")
 
@@ -56,9 +56,9 @@ awful.spawn.with_shell(gfs.get_configuration_dir() .. "autostart")
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 local modkey = "Mod4"
--- }}}
+-- }
 
--- {{{ Menu
+-- { Menu
 -- Create a launcher widget and a main menu
 local myawesomemenu = {
   {
@@ -89,9 +89,9 @@ local mylauncher = awful.widget.launcher { image = beautiful.awesome_icon, menu 
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
+-- }
 
--- {{{ Tag layout
+-- { Tag layout
 -- Table of layouts to cover with awful.layout.inc, order matters.
 tag.connect_signal("request::default_layouts", function()
   awful.layout.append_default_layouts {
@@ -105,9 +105,9 @@ tag.connect_signal("request::default_layouts", function()
     awful.layout.suit.corner.nw,
   }
 end)
--- }}}
+-- }
 
--- {{{ Wallpaper
+-- { Wallpaper
 -- screen.connect_signal("property::geometry", awful.spawn.with_shell "nitrogen --restore")
 screen.connect_signal("request::wallpaper", function()
   -- awful.wallpaper {
@@ -127,9 +127,9 @@ screen.connect_signal("request::wallpaper", function()
   -- }
   awful.spawn.with_shell "nitrogen --restore"
 end)
--- }}}
+-- }
 
--- {{{ Wibar
+-- { Wibar
 
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()
@@ -235,9 +235,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
     },
   }
 end)
--- }}}
+-- }
 
--- {{{ Mouse bindings
+-- { Mouse bindings
 awful.mouse.append_global_mousebindings {
   awful.button({}, 3, function()
     mymainmenu:toggle()
@@ -245,9 +245,9 @@ awful.mouse.append_global_mousebindings {
   awful.button({}, 4, awful.tag.viewprev),
   awful.button({}, 5, awful.tag.viewnext),
 }
--- }}}
+-- }
 
--- {{{ Key bindings
+-- { Key bindings
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings {
@@ -481,9 +481,9 @@ client.connect_signal("request::default_keybindings", function()
   }
 end)
 
--- }}}
+-- }
 
--- {{{ Rules
+-- { Rules
 -- Rules to apply to new clients.
 ruled.client.connect_signal("request::rules", function()
   -- All clients will match this rule.
@@ -542,9 +542,9 @@ ruled.client.connect_signal("request::rules", function()
   }
 end)
 
--- }}}
+-- }
 
--- {{{ Titlebars
+-- { Titlebars
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
   -- buttons for the titlebar
@@ -583,7 +583,7 @@ client.connect_signal("request::titlebars", function(c)
   }
 end)
 
--- {{{ Notifications
+-- { Notifications
 
 ruled.notification.connect_signal("request::rules", function()
   -- All notifications will match this rule.
@@ -600,7 +600,7 @@ naughty.connect_signal("request::display", function(n)
   naughty.layout.box { notification = n }
 end)
 
--- }}}
+-- }
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

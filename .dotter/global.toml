@@ -47,7 +47,7 @@ depends = ["polybar", "rofi", "dunst"]
 "cfg/openbox" = "~/.config/openbox"
 
 [polybar.files]
-"cfg/polybar" = {target = "~/.config/polybar", type = "symbolic"}
+"cfg/polybar" = "~/.config/polybar"
 
 [ranger.files]
 "cfg/ranger" = "~/.config/ranger"
