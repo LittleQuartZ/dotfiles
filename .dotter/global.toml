@@ -61,6 +61,9 @@ files = { "cfg/eww" = "~/.config/eww" }
 depends = ["colors"]
 files = { "mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome" }
 
+[fonts]
+files = { "fonts" = {target = "~/.fonts", type = "symbolic"} }
+
 [kitty]
 depends = ["colors"]
 files = { "cfg/kitty" = "~/.config/kitty/kitty.conf" }
