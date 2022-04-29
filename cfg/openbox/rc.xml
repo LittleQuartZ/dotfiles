@@ -223,6 +223,30 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
     <!-- <keybind key="W-d"> -->
     <!--   <action name="ToggleShowDesktop"/> -->
     <!-- </keybind> -->
@@ -298,7 +322,7 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>rofi -show drun -theme ~/.config/openbox/config.rasi</command>
+        <command>rofi -modi window,drun -show drun -theme ~/.config/rofi/adi.rasi</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -338,50 +362,50 @@
     <!-- moving window with arrow -->
     <keybind key="W-S-Left">
       <action name="MoveRelative">
-        <x>-50</x>
+        <x>-200</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-S-Right">
       <action name="MoveRelative">
-        <x>50</x>
+        <x>200</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-S-Down">
       <action name="MoveRelative">
         <x>0</x>
-        <y>50</y>
+        <y>200</y>
       </action>
     </keybind>
     <keybind key="W-S-Up">
       <action name="MoveRelative">
         <x>0</x>
-        <y>-50</y>
+        <y>-200</y>
       </action>
     </keybind>
     <keybind key="W-Left">
       <action name="MoveRelative">
-        <x>-5</x>
+        <x>-20</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-Right">
       <action name="MoveRelative">
-        <x>5</x>
+        <x>20</x>
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-Down">
       <action name="MoveRelative">
         <x>0</x>
-        <y>5</y>
+        <y>20</y>
       </action>
     </keybind>
     <keybind key="W-Up">
       <action name="MoveRelative">
         <x>0</x>
-        <y>-5</y>
+        <y>-20</y>
       </action>
     </keybind>
     <!-- window control -->

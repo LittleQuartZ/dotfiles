@@ -1,0 +1,44 @@
+#! /bin/sh
+
+rofi_command="rofi"
+
+focused="$(wmctrl -d | grep '*' | cut -d ' ' -f 13)"
+
+notify() {
+  dunstify -a BSPWM "Desktop $1: Layout $(bsp-layout get "$1")" -t 2000
+}
+
+case "$1" in
+  "")
+    options="$(bsp-layout layouts)"
+    chosen="$(echo "$options" | $rofi_command -p ' layouts ' -dmenu -selected-row 0)"
+    if [ -n "$chosen" ]; then
+      bsp-layout set "$chosen"
+      notify "$focused"
+    fi
+    ;;
+  "once")
+    options="$(bsp-layout layouts)"
+    chosen="$(echo "$options" | $rofi_command -p ' relayout ' -dmenu -selected-row 0)"
+    if [ -n "$chosen" ]; then
+      bsp-layout once "$chosen"
+      notify "$focused"
+    fi
+    ;;
+  "set")
+    bsp-layout set "$2"
+    dunstify -a BSPWM "Desktop $focused: Layout $2" -t 2000
+    ;;
+  "get")
+    bsp-layout get "$focused"
+    ;;
+  "remove")
+    if [ -n "$2" ]; then
+      bsp-layout remove "$2"
+      notify "$2"
+    else
+      bsp-layout remove "$focused"
+      notify "$focused"
+    fi
+    ;;
+esac

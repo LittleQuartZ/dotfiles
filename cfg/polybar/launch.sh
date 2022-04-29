@@ -9,5 +9,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch Polybar
 
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m USER=$(echo $USER) polybar $1 -c ~/.config/polybar/config.ini &
+    export MONITOR=$m
+    export TRAY_POSITION=none
+    if [[ $m == "eDP" ]]; then
+     export TRAY_POSITION=right 
+    fi
+    polybar $1 -c ~/.config/polybar/config.ini &
   done
