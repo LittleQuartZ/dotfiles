@@ -30,13 +30,6 @@ config borderless_monocle true
 config gapless_monocle true
 config focus_follows_pointer true
 
-# desktops=$(bspc query -D --names)
-#
-# for desktop in $desktops
-# do
-#   bsp-layout set tiled $desktop
-# done
-
 bspc rule -r \*
 
 floating="Arandr Lxappearance Pavucontrol NMTUI"
