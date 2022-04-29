@@ -7,22 +7,10 @@ depends = []
 # nvim = "~/.config/nvim"
 bin = "~/.local/bin"
 xmodmap = "~/.Xmodmap"
-
 # [default.variables]
-
-[mpd.files]
-mpd = "~/.config/mpd/mpd.conf"
-mpDris2 = "~/.config/mpd/mpDris2.conf"
-ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
 
 [awesome.files]
 "cfg/awesome" = {target="~/.config/awesome", type = "symbolic"}
-
-[openbox]
-depends = ["polybar", "rofi", "dunst"]
-
-[openbox.files]
-"cfg/openbox" = "~/.config/openbox"
 
 [bspwm]
 depends = ["polybar","rofi","dunst"]
@@ -32,21 +20,8 @@ depends = ["polybar","rofi","dunst"]
 "cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc"
 "cfg/picom" = "~/.config/bspwm/picom.conf"
 
-[polybar.files]
-"cfg/polybar" = {target = "~/.config/polybar", type = "symbolic"}
-
-[starship.files]
-"cfg/starship/starship.toml" = "~/.config/starship.toml"
-"cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
-
-[zsh.files]
-zshrc = "~/.zshrc"
-
-[kitty.files]
-"cfg/kitty" = "~/.config/kitty/kitty.conf"
-
-[rofi.files]
-"cfg/rofi" = "~/.config/rofi"
+[dunst.files]
+"cfg/dunstrc" = "~/.config/dunst/dunstrc"
 
 [eww.files]
 "cfg/eww" = "~/.config/eww"
@@ -54,8 +29,35 @@ zshrc = "~/.zshrc"
 [firefox.files]
 "mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome"
 
+[kitty.files]
+"cfg/kitty" = "~/.config/kitty/kitty.conf"
+
+[mpd.files]
+mpd = "~/.config/mpd/mpd.conf"
+mpDris2 = "~/.config/mpd/mpDris2.conf"
+ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"}
+
 [nvchad.files]
 "cfg/customchad" = "~/.config/nvim/lua/custom"
 
-[dunst.files]
-"cfg/dunstrc" = "~/.config/dunst/dunstrc"
+[openbox]
+depends = ["polybar", "rofi", "dunst"]
+
+[openbox.files]
+"cfg/openbox" = "~/.config/openbox"
+
+[polybar.files]
+"cfg/polybar" = {target = "~/.config/polybar", type = "symbolic"}
+
+[ranger.files]
+"cfg/ranger" = "~/.config/ranger"
+
+[rofi.files]
+"cfg/rofi" = "~/.config/rofi"
+
+[starship.files]
+"cfg/starship/starship.toml" = "~/.config/starship.toml"
+"cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml"
+
+[zsh.files]
+zshrc = "~/.zshrc"
