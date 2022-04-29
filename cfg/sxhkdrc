@@ -10,6 +10,10 @@ super + w
   bspc rule -a firefox desktop='^2' follow=on -o; \
   firefox
 
+super + e
+  bspc rule -a nvim desktop='^3' follow=on -o; \
+  kitty --class nvim -e nvim
+
 super + shift + {d,Tab}
   rofi -show {run,window}
 
@@ -114,8 +118,8 @@ super + Tab
   bspc node {next,prev}.local.window -f
 
 # description: focus the node for the given path jump
-super + {p,b,comma,period}
-  bspc node -f @{parent,brother,first,second}
+super + {comma,period}
+  bspc node -f @{first,second}
 
 # description: focus the next/previous window in the current desktop
 #super + {_,shift + }c
@@ -181,6 +185,13 @@ super + m
 
 super + k
   bat Desktop/dotfiles/sxhkdrc | grep description -A1 | sed "/--/d" | awk 'NR%2{printf "%s | ",$0;next;}1' | rofi -dmenu -p
+
+super + ctrl + b
+  polybar-msg cmd show
+
+super + ctrl + n
+  polybar-msg cmd hide; \
+  bspc config top_padding 0
 
 # lock screen
 #super + x
