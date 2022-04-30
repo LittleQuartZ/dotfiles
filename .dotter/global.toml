@@ -89,6 +89,10 @@ files = { "cfg/ranger" = "~/.config/ranger" }
 depends = ["colors"]
 files = { "cfg/rofi" = "~/.config/rofi" }
 
+[i3]
+depends = ["polybar", "rofi", "dunst", "colors"]
+files = { "cfg/i3" = "~/.config/i3" }
+
 [starship]
 depends = ["colors"]
 files = { "cfg/starship/starship.toml" = "~/.config/starship.toml", "cfg/starship/config-transient.toml" = "~/.config/starship/config-transient.toml" }
