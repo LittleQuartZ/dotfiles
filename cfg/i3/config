@@ -1,6 +1,30 @@
+#############
+# variables #
+#############
+
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 12
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $mode_layout Change layout: (v) (h) (s) (3) (2) (c) (a) (f) (t)
+
+#############
+# autostart #
+#############
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
@@ -12,21 +36,21 @@ exec_always "~/.config/polybar/launch.sh i3"
 exec_always xsetroot -cursor_name left_ptr
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+font pango:JetBrainsMono Nerd Font 12
+
+############
+# keybinds #
+############
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/volume up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/volume down
 bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/volume mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-set $left h
-set $down j
-set $up k
-set $right l
-
 # start a program
 bindsym $mod+Return exec kitty
 bindsym $mod+w exec i3-msg workspace 2 && i3-msg exec firefox
+bindsym $mod+e [class="kitty" title="NVIM"] focus
 
 bindsym $mod+q kill
 
@@ -48,17 +72,6 @@ bindsym $mod+Shift+$right exec i3l move right
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s floating toggle
 bindsym $mod+space focus mode_toggle
-
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -84,7 +97,22 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# i3-layouts
+bindsym $mod+Mod1+Shift+r reload
+bindsym $mod+Mod1+r restart
+bindsym $mod+Mod1+e exec i3-msg exit
+
+bindsym $mod+r mode "resize"
+bindsym $mod+Shift+m mode "$mode_layout"
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+bindsym --whole-window $mod+button2 kill
+
+##############
+# i3-layouts #
+##############
+
 set $i3l autosplit to workspace $ws1
 set $i3l autosplit to workspace $ws2
 set $i3l autosplit to workspace $ws3
@@ -96,35 +124,19 @@ set $i3l autosplit to workspace $ws8
 set $i3l autosplit to workspace $ws9
 set $i3l autosplit to workspace $ws10
 
-bindsym $mod+Mod1+Shift+r reload
-bindsym $mod+Mod1+r restart
-bindsym $mod+Mod1+e exec i3-msg exit
+########
+# mode #
+########
 
-bindsym $mod+r mode "resize"
 mode "resize" {
         bindsym $left resize shrink width 10 px or 10 ppt
         bindsym $up resize grow height 10 px or 10 ppt
         bindsym $down resize shrink height 10 px or 10 ppt
         bindsym $right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
 
-gaps inner 8
-default_border pixel 2
-
-# class                 border  backgr. text    indicator child_border
-client.focused          {{ accent }} {{ accent }} {{ bg0 }} {{ accent }} {{ accent }}
-client.focused_inactive {{ bg0 }} {{ bg0 }} {{ fg }} {{ grey0 }} {{ grey0 }}
-client.unfocused        {{ grey0 }} {{ bg0 }} {{ fg }} {{ blue }} {{ grey0 }}
-client.urgent           {{ red }} {{ red }} {{ fg }} {{ red }} {{ red }}
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-set $mode_layout Change layout: (v) (h) (s) (3) (2) (c) (a) (f) (t)
-bindsym $mod+Shift+m mode "$mode_layout"
 mode "$mode_layout" {
   bindsym v exec i3l vstack && dunstify -t 2000 -a Layout 'Layout vstack' && i3-msg mode "default"
   bindsym h exec i3l hstack && dunstify -t 2000 -a Layout 'Layout hstack' && i3-msg mode "default"
@@ -139,7 +151,25 @@ mode "$mode_layout" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+#########
+# rules #
+#########
 
-bindsym --whole-window $mod+button2 kill
+for_window [class="NMTUI"] floating enable
+for_window [class="nvim"] move container to workspace 3
+
+###########
+# options #
+###########
+
+floating_modifier $mod
+
+gaps inner 8
+default_border pixel 2
+
+# class                 border  backgr. text    indicator child_border
+client.focused          {{ accent }} {{ accent }} {{ bg0 }} {{ accent }} {{ accent }}
+client.focused_inactive {{ bg0 }} {{ bg0 }} {{ fg }} {{ grey0 }} {{ grey0 }}
+client.unfocused        {{ grey0 }} {{ bg0 }} {{ fg }} {{ blue }} {{ grey0 }}
+client.urgent           {{ red }} {{ red }} {{ fg }} {{ red }} {{ red }}
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
