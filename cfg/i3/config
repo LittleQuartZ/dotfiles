@@ -47,15 +47,25 @@ bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/volume down
 bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/volume mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+bindsym XF86MonBrightnessDown exec "light -U 5"
+bindsym Shift+XF86MonBrightnessDown exec "light -U 20"
+bindsym XF86MonBrightnessUp exec "light -A 5"
+bindsym Shift+XF86MonBrightnessUp exec "light -A 20"
+
 # start a program
 bindsym $mod+Return exec kitty
 bindsym $mod+w exec i3-msg workspace 2 && i3-msg exec firefox
 bindsym $mod+e [class="kitty" title="NVIM"] focus
+bindsym $mod+Shift+x exec ~/.local/bin/powermenu
+bindsym $mod+p exec ~/.local/bin/xcolor-pick
+
 
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+Shift+r exec --no-startup-id "rofi -show run"
+bindsym $mod+Shift+Tab exec --no-startup-id "rofi -show window -theme-str \\"window{width: 40%;}\\""
 
 # change focus
 bindsym $mod+$left focus left
@@ -106,6 +116,8 @@ bindsym $mod+Shift+m mode "$mode_layout"
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+bindsym $mod+b exec polybar-msg cmd toggle
 
 bindsym --whole-window $mod+button2 kill
 
