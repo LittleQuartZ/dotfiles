@@ -42,7 +42,7 @@ accent = "#DDB6F2"
 
 [default]
 depends = []
-files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap" }
+files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap", "xresources" = "~/.Xresources" }
 
 [awesome]
 files = { "cfg/awesome" = { target="~/.config/awesome", type = "symbolic" } }
@@ -59,7 +59,7 @@ files = { "cfg/eww" = "~/.config/eww" }
 
 [firefox]
 depends = ["colors"]
-files = { "mozchrome" = "~/.mozilla/firefox/wlmgcclo.default-release/chrome" }
+files = { "mozchrome" = "~/.mozilla/firefox/9om0wumt.default-release/chrome" }
 
 [fonts]
 files = { "fonts" = {target = "~/.fonts", type = "symbolic"} }
@@ -70,6 +70,9 @@ files = { "cfg/kitty" = "~/.config/kitty/kitty.conf" }
 
 [mpd]
 files = { mpd = "~/.config/mpd/mpd.conf", mpDris2 = "~/.config/mpd/mpDris2.conf", ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"} }
+
+[neofetch]
+files = { "cfg/neofetch" = "~/.config/neofetch/config.conf" }
 
 [nvchad]
 files = { "cfg/customchad" = "~/.config/nvim/lua/custom" }
