@@ -7,8 +7,11 @@ font_size	 14
 map ctrl+shift+a>d set_background_opacity 0.7
 map ctrl+shift+a>1 set_background_opacity default
 
+allow_remote_control yes
 dynamic_background_opacity true
 # background_opacity 0.8
+
+map ctrl+0 remote_control set-spacing padding=0
 
 window_padding_width 10
 
