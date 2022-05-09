@@ -12,14 +12,14 @@ print_info() {
     info "$(color 5)sh" shell
     # info "Resolution" resolution
     info "$(color 6)de" de
-    info "$(color 7)wm" wm
+    info "$(color 8)wm" wm
     # info "WM Theme" wm_theme
     # info "Theme" theme
     # info "Icons" icons
-    info "$(color 8)term" term
+    info "$(color 9)term" term
     # info "$(color) Font" term_font
-    info "$(color 9)disk" disk
-    # info "$(color 10)cpu" cpu
+    info "$(color 10)disk" disk
+    # info "$(color 11)cpu" cpu
     # info "GPU" gpu
     # info "Memory" memory
 
