@@ -145,6 +145,7 @@ path+=('/home/syahdan/.local/bin')
 export PATH
 export EDITOR="nvim"
 export SUDO_PROMPT='[] syahdan, '
+export BAT_THEME="base16"
 meow print --colour 32
 
 # if [ -n "$DESKTOP_SESSION" ];then
