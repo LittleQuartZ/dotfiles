@@ -4,22 +4,22 @@ print_info() {
     info title
     info underline
 
-    info "$(color 1)os" distro
+    info "$(color 1)██ os" distro
     #info "Host" model
-    info "$(color 2)kern" kernel
-    info "$(color 3)up" uptime
-    info "$(color 4)pkgs" packages
-    info "$(color 5)sh" shell
+    info "$(color 2)██ kern" kernel
+    info "$(color 3)██ up" uptime
+    info "$(color 4)██ pkgs" packages
+    info "$(color 5)██ sh" shell
     # info "Resolution" resolution
-    info "$(color 6)de" de
-    info "$(color 8)wm" wm
+    info "$(color 6)██ de" de
+    info "$(color 8)██ wm" wm
     # info "WM Theme" wm_theme
     # info "Theme" theme
     # info "Icons" icons
-    info "$(color 9)term" term
+    info "$(color 9)██ term" term
     # info "$(color) Font" term_font
-    info "$(color 10)disk" disk
-    # info "$(color 11)cpu" cpu
+    info "$(color 10)██ disk" disk
+    info "$(color 11)██ cpu" cpu
     # info "GPU" gpu
     # info "Memory" memory
 
@@ -34,7 +34,7 @@ print_info() {
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
 
-    info cols
+    #info cols
 }
 
 # Title
@@ -536,7 +536,7 @@ underline_enabled="on"
 # Default:  '-'
 # Values:   'string'
 # Flag:     --underline_char
-underline_char="-"
+underline_char="─"
 
 
 # Info Separator
