@@ -19,6 +19,9 @@ local sources = {
   b.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
   b.code_actions.shellcheck,
   b.diagnostics.shellcheck,
+
+  b.diagnostics.pylint,
+  -- b.formatting.black,
 }
 
 local M = {}
