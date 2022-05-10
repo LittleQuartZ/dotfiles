@@ -14,8 +14,14 @@ config() { bspc config "$@" & }
 xmodmap "$HOME/.Xmodmap" &
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor eDP -d 1 2 3 4 5
-bspc monitor HDMI-A-0 -d 6 7 8 9 0
+monitor="$(polybar --list-monitors | cut -d":" -f1)"
+
+if [ "$monitor" = "eDP" ]; then
+  bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 0
+else
+  bspc monitor eDP -d 1 2 3 4 5
+  bspc monitor HDMI-A-0 -d 6 7 8 9 0
+fi
 
 config window_gap 10
 
@@ -48,6 +54,7 @@ start picom --config "$HOME"/.config/bspwm/picom.conf --experimental-backends
 start xsetroot -cursor_name left_ptr
 start ~/.local/bin/brdr
 start nm-applet
+start "$HOME/.screenlayout/monitor.sh"
 
 # eww kill
 # eww daemon && eww open bar &
