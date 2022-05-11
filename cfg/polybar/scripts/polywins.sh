@@ -5,7 +5,7 @@
 
 active_text_color="{{ accent }}"
 active_bg=
-active_underline="#ECB3B2"
+active_underline="#00000000"
 
 inactive_text_color="{{ grey0 }}"
 inactive_bg=

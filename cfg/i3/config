@@ -22,6 +22,10 @@ set $ws10 "10"
 
 set $mode_layout Change layout: (v) (h) (s) (3) (2) (c) (a) (f) (t)
 
+set $mode_gaps Gaps: (o)uter, (i)nner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+
 #############
 # autostart #
 #############
@@ -62,7 +66,7 @@ bindsym $mod+p exec ~/.local/bin/xcolor-pick
 
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym $mod+Shift+r exec --no-startup-id "rofi -show run"
 bindsym $mod+Shift+Tab exec --no-startup-id "rofi -show window -theme-str \\"window{width: 40%;}\\""
@@ -113,6 +117,7 @@ bindsym $mod+Mod1+e exec i3-msg exit
 
 bindsym $mod+r mode "resize"
 bindsym $mod+Shift+m mode "$mode_layout"
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -161,6 +166,39 @@ mode "$mode_layout" {
   bindsym t exec i3l tabbed && dunstify -t 2000 -a Layout 'Layout tabbed' && i3-msg mode "default"
 
   bindsym Escape mode "default"
+}
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
 }
 
 #########
