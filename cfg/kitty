@@ -16,7 +16,7 @@ map ctrl+0 remote_control set-spacing padding=0
 window_padding_width 10
 
 symbol_map U+F0BAF-U+F02A0 Material
-# vim:ft=kitty
+# vim:set filetype=kitty
 
 # {{ schemename }}
 
