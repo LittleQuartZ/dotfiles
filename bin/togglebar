@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$(bspc config top_padding)" = 40 ]; then
+  polybar-msg cmd hide
+  bspc config top_padding 0
+else
+  polybar-msg cmd show
+  sleep 0.5
+  bspc config top_padding 40
+fi

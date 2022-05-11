@@ -183,15 +183,8 @@ super + shift + {Left,Down,Up,Right}
 super + m
   bspc desktop -l next
 
-super + k
-  bat Desktop/dotfiles/sxhkdrc | grep description -A1 | sed "/--/d" | awk 'NR%2{printf "%s | ",$0;next;}1' | rofi -dmenu -p
-
-super + ctrl + b
-  polybar-msg cmd show
-
-super + ctrl + n
-  polybar-msg cmd hide; \
-  bspc config top_padding 0
+super + b
+  ~/.local/bin/togglebar
 
 # lock screen
 #super + x
