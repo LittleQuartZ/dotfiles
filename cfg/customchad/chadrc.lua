@@ -12,16 +12,13 @@ M.options = {
 }
 
 M.ui = {
-  theme = "everforest",
+  theme = "catppuccin",
 }
 
 userPlugins = require "custom.plugins"
 
 M.plugins = {
   options = {
-    lspconfig = {
-      setup_lspconf = "custom.plugins.lspconfig", -- path of lspconfig file
-    },
     statusline = {
       style = "block", -- default/round/slant/block/arrow
     },
