@@ -42,7 +42,7 @@ accent = "#DDB6F2"
 
 [default]
 depends = []
-files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap", "xresources" = "~/.config/X11/xresources" }
+files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap", "xresources" = "~/.config/X11/xresources", "cfg/gitconfig" = "~/.config/git/config" }
 
 [awesome]
 files = { "cfg/awesome" = { target="~/.config/awesome", type = "symbolic" } }

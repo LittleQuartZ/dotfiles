@@ -1,0 +1,18 @@
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[user]
+  name = Syahdan
+  email = 58659387+LittleQuartZ@users.noreply.github.com
+[diff]
+  tool = kitty
+  guitool = kitty.gui
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "kitty"]
+  cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+  cmd = kitty kitty +kitten diff $LOCAL $REMOTE
