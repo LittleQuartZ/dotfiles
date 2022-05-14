@@ -22,14 +22,36 @@ setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 
 bindkey -v
 
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+   [[ $1 = 'block' ]]; then
+  echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+      [[ ${KEYMAP} == viins ]] ||
+      [[ ${KEYMAP} = '' ]] ||
+      [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+  }
+  zle -N zle-keymap-select
+
+  # Use beam shape cursor on startup.
+  echo -ne '\e[5 q'
+
+  # Use beam shape cursor for each new prompt.
+  preexec() {
+     echo -ne '\e[5 q'
+}
+
 autoload -Uz compinit
-compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$HOME/.config/zsh/.zcompcache"
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 
 # Define completers
 zstyle ':completion:*' completer _extensions _complete _approximate
@@ -144,8 +166,18 @@ export FZF_DEFAULT_COMMAND='rg --files'
 path+=('/home/syahdan/.local/bin')
 export PATH
 export EDITOR="nvim"
+export TERMINAL="kitty"
 export SUDO_PROMPT='[] syahdan, '
 export BAT_THEME="base16"
+export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+
 meow print --colour 32
 
 # if [ -n "$DESKTOP_SESSION" ];then

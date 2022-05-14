@@ -42,7 +42,7 @@ accent = "#DDB6F2"
 
 [default]
 depends = []
-files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap", "xresources" = "~/.Xresources" }
+files = { "bin" = "~/.local/bin", "xmodmap" = "~/.Xmodmap", "xresources" = "~/.config/X11/xresources" }
 
 [awesome]
 files = { "cfg/awesome" = { target="~/.config/awesome", type = "symbolic" } }
@@ -102,4 +102,4 @@ files = { "cfg/starship/starship.toml" = "~/.config/starship.toml"}
 
 [zsh]
 depends = ["colors"]
-files = { zshrc = "~/.zshrc" }
+files = { zshrc = "~/.config/zsh/.zshrc" }
