@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "run,drun,window,file-browser-extended";
     lines: 5;
     font: "JetBrainsMono Nerd Font 14";
     show-icons: true;
@@ -12,7 +12,7 @@ configuration{
     display-drun: " apps ";
     display-run: " run ";
     display-window: " window ";
-    display-Network: " network ";
+    display-file-browser-extended: " file ";
     sidebar-mode: true;
 }
 
@@ -99,4 +99,14 @@ button {
 button selected {
   background-color: @bg-col;
   text-color: @blue;
+}
+
+message { 
+  background-color: @bg-col; 
+  margin: 18px 0 0 18px;
+}
+
+textbox {
+  background-color: @bg-col;
+  text-color: @fg-col2;
 }

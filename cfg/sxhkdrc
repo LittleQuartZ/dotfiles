@@ -14,8 +14,8 @@ super + e
   bspc rule -a nvim desktop='^3' follow=on -o; \
   kitty --class nvim -e nvim
 
-super + shift + {d,Tab}
-  rofi -show {run,window}
+super + shift + {d,Tab,n}
+  rofi -show {run,window,file-browser-extended}
 
 super + d
   rofi -show drun
