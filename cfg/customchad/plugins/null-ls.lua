@@ -8,6 +8,7 @@ local sources = {
   b.formatting.eslint_d,
   b.diagnostics.eslint_d,
 
+  b.diagnostics.tidy,
   b.formatting.xmllint,
   -- b.diagnostics.codespell,
 

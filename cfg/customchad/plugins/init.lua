@@ -18,4 +18,14 @@ return {
     end,
   },
   ["nathom/filetype.nvim"] = {},
+  ["turbio/bracey.vim"] = {},
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    config = function()
+      require "custom.plugins.alpha"
+    end,
+  },
+  ["fladson/vim-kitty"] = {
+    ft = "kitty",
+  },
 }
