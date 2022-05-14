@@ -69,7 +69,7 @@ depends = ["colors"]
 files = { "cfg/kitty/config" = "~/.config/kitty/kitty.conf", "cfg/kitty/diff" = "~/.config/kitty/diff.conf", "cfg/kitty/dotedit" = "~/.config/kitty/dotedit.session" }
 
 [music]
-files = { "cfg/mpd" = "~/.config/mpd", "cfg/mopidy" = "~/.config/mopidy", "cfg/ncmpcpp" = "~/.config/ncmpcpp/config" }
+files = { "cfg/mpd" = "~/.config/mpd", "cfg/mopidy" = "~/.config/mopidy", "cfg/ncmpcpp" = {target = "~/.config/ncmpcpp/config", type = "symbolic"} }
 
 [neofetch]
 files = { "cfg/neofetch" = "~/.config/neofetch/config.conf" }
