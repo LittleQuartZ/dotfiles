@@ -1,3 +1,4 @@
+# vim:ft=kitty
 font_family      JetBrainsMono Medium Nerd Font
 bold_font        auto
 italic_font      auto
@@ -9,14 +10,13 @@ map ctrl+shift+a>1 set_background_opacity default
 
 allow_remote_control yes
 dynamic_background_opacity true
-# background_opacity 0.8
+background_opacity 0.7
 
 map ctrl+0 remote_control set-spacing padding=0
 
 window_padding_width 10
 
 symbol_map U+F0BAF-U+F02A0 Material
-# vim:set filetype=kitty
 
 # {{ schemename }}
 

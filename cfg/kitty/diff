@@ -1,0 +1,11 @@
+# vim:ft=kitty
+pygments_style  catppuccin
+
+background #1e1e2e
+foreground #d9e0ee
+
+removed_bg #73102E
+added_bg #2C6A34
+
+highlight_removed_bg #5A0015
+highlight_added_bg #12501A

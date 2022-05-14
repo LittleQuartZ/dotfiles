@@ -155,6 +155,9 @@ alias mv='mv -v'
 alias cp='cp -vr'
 alias rm='rm -vr'
 
+alias d="kitty +kitten diff"
+alias gd="git difftool --no-symlinks --dir-diff"
+
 alias sctl='sudo systemctl'
 
 alias gcb='git branch --list | fzf | sed 's/\*//' | xargs -ro git checkout'

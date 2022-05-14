@@ -66,7 +66,7 @@ files = { "fonts" = {target = "~/.fonts", type = "symbolic"} }
 
 [kitty]
 depends = ["colors"]
-files = { "cfg/kitty" = "~/.config/kitty/kitty.conf" }
+files = { "cfg/kitty/config" = "~/.config/kitty/kitty.conf", "cfg/kitty/diff" = "~/.config/kitty/diff.conf", "cfg/kitty/dotedit" = "~/.config/kitty/dotedit.session" }
 
 [mpd]
 files = { mpd = "~/.config/mpd/mpd.conf", mpDris2 = "~/.config/mpd/mpDris2.conf", ncmpcpp = {target="~/.config/ncmpcpp", type="symbolic"} }
