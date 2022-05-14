@@ -1,0 +1,9 @@
+May 11 11:25 : update: added /tak.mp3
+May 11 11:26 : mixer: Failed to read mixer for 'default detected output': no such mixer control: PCM
+May 11 11:26 : exception: Stored playlists are disabled
+May 11 11:26 : output: Failed to open mixer for 'default detected output': no such mixer control: PCM
+May 11 11:26 : player: played "tak.mp3"
+May 11 11:29 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 11 11:29 : exception: Stored playlists are disabled
+May 11 11:30 : mixer: Failed to read mixer for 'My ALSA Device': no such mixer control: PCM
+May 11 11:30 : exception: Stored playlists are disabled
