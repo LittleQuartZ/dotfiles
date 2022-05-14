@@ -14,11 +14,13 @@ config() { bspc config "$@" & }
 xmodmap "$HOME/.Xmodmap" &
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
-monitor="$(polybar --list-monitors | cut -d":" -f1)"
+monitor="$(xrandr | grep " connected" | grep "HDMI-A-0")"
 
-if [ "$monitor" = "eDP" ]; then
+if [ "$monitor" = "" ]; then
   bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 0
+  xrandr --output HDMI-A-0 --off
 else
+  xrandr --output HDMI-A-0 --mode 1920x1080 --pos 1920x0
   bspc monitor eDP -d 1 2 3 4 5
   bspc monitor HDMI-A-0 -d 6 7 8 9 0
 fi
@@ -36,7 +38,7 @@ config borderless_monocle true
 config gapless_monocle true
 config focus_follows_pointer true
 
-bspc rule -r \*
+bspc rule -r *
 
 floating="Arandr Lxappearance Pavucontrol NMTUI"
 
@@ -49,12 +51,13 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # usr/bin/dunst &
 start "$HOME"/.config/polybar/launch.sh bspwm
+start mopidy
 start nitrogen --restore
 start picom --config "$HOME"/.config/bspwm/picom.conf --experimental-backends
 start xsetroot -cursor_name left_ptr
 start ~/.local/bin/brdr
 start nm-applet
-start "$HOME/.screenlayout/monitor.sh"
+start mpDris2
 
 # eww kill
 # eww daemon && eww open bar &
