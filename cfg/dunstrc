@@ -23,7 +23,8 @@
 
     transparency = 0
 
-    separator_height = 10
+    separator_height = 3
+    separator_color = "{{ accent }}"
 
     padding = 8
     horizontal_padding = 12
@@ -31,7 +32,6 @@
 
     frame_width = 3
     frame_color = "{{ accent }}"
-    separator_color = "#00000000"
 
     sort = yes
 
