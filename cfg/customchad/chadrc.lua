@@ -24,6 +24,9 @@ M.plugins = {
     lspconfig = {
       setup_lspconf = "custom.plugins.lspconfig",
     },
+    statusline = {
+      separator_style = "arrow", -- default/round/slant/block/arrow
+    },
   },
   user = userPlugins,
   override = {
@@ -45,6 +48,19 @@ M.plugins = {
       view = {
         hide_root_folder = false,
       },
+    },
+    ["lukas-reineke/indent-blankline.nvim"] = {
+      char = "│",
+      space_char_blankline = " ",
+      show_current_context = true,
+      show_first_indent_level = true,
+      context_pattern_highlight = {
+        ["^func"] = "Function",
+        ["^if"] = "Conditional",
+      },
+    },
+    ["feline-nvim/feline.nvim"] = {
+      icon_styles = "arrow",
     },
   },
 }
