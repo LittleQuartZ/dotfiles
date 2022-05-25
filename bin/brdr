@@ -2,9 +2,9 @@
 # double borders
 # needs chwb2 from wmutils/opt
 
-outer='0x{{ replace bg0 "#" "" }}'     # outer
+outer='0x{{ replace bg2 "#" "" }}'     # outer
 inner1='0x{{ replace accent "#" "" }}' # focused
-inner2='0x{{ replace bg0 "#" "" }}'    # normal
+inner2='0x{{ replace bg2 "#" "" }}'    # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 

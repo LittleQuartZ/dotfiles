@@ -1,8 +1,8 @@
 * {
-    bg-col:  {{ bg0 }};
-    bg-col-light: {{ bg0 }};
+    bg-col:  {{ bg2 }};
+    bg-col-light: {{ bg2 }};
     border-col: {{ accent }};
-    selected-col: {{ bg0 }};
+    selected-col: {{ bg2 }};
     blue: {{ accent }};
     fg-col: {{ grey0 }};
     fg-col2: {{ accent }};

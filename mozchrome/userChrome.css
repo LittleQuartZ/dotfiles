@@ -1,8 +1,8 @@
 :root {
   /* Snazzy colours */
-  --bg: {{ bg0 }};
+  --bg: {{ bg2 }};
   --fg: {{ fg }};
-  --black: {{ bg2 }};
+  --black: {{ bg0 }};
   --red: {{ red }};
   --green: {{ green }};
   --yellow: {{ yellow }};

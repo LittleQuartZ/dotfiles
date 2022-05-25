@@ -218,8 +218,8 @@ gaps inner 8
 default_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused          {{ accent }} {{ accent }} {{ bg0 }} {{ accent }} {{ accent }}
-client.focused_inactive {{ bg0 }} {{ bg0 }} {{ fg }} {{ grey0 }} {{ grey0 }}
-client.unfocused        {{ grey0 }} {{ bg0 }} {{ fg }} {{ blue }} {{ grey0 }}
+client.focused          {{ accent }} {{ accent }} {{ bg2 }} {{ accent }} {{ accent }}
+client.focused_inactive {{ bg2 }} {{ bg2 }} {{ fg }} {{ grey0 }} {{ grey0 }}
+client.unfocused        {{ grey0 }} {{ bg2 }} {{ fg }} {{ blue }} {{ grey0 }}
 client.urgent           {{ red }} {{ red }} {{ fg }} {{ red }} {{ red }}
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c

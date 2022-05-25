@@ -1,35 +1,36 @@
 # vim:ft=kitty
-font_family      JetBrainsMono Medium Nerd Font
+font_family      Comic Code Ligatures
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 font_size	 14
 
 map ctrl+shift+a>d set_background_opacity 0.7
-map ctrl+shift+a>1 set_background_opacity default
+map ctrl+shift+a>1 set_background_opacity 1
 
 allow_remote_control yes
 dynamic_background_opacity true
-background_opacity 0.7
+background_opacity 1
 
 map ctrl+0 remote_control set-spacing padding=0
 
 window_padding_width 10
 
 symbol_map U+F0BAF-U+F02A0 Material
+symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0-U+E0C8,U+E0CA,U+E0CC-U+E0D2,U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E62F,U+E700-U+E7C5,U+F000-U+F2E0,U+F300-U+F31C,U+F400-U+F4A9,U+F500-U+F8FF Symbols Nerd Font
 
 # {{ schemename }}
 
 foreground            {{ fg }}
-background            {{ bg0 }}
-selection_foreground  {{ bg1 }}
+background            {{ bg2 }}
+selection_foreground  {{ bg3 }}
 selection_background  {{ accent }}
 url_color             {{ blue }}
 cursor                {{ accent }}
 
 # black
-color0   {{ bg3 }}
-color8   {{ bg4 }}
+color0   {{ bg4 }}
+color8   {{ bg5 }}
 
 # red
 color1   {{ red }}

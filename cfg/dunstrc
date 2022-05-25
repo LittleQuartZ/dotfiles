@@ -97,15 +97,15 @@
     #default_icon = /path/to/icon
 
 [urgency_low]
-background = "{{ bg0 }}"
+background = "{{ bg2 }}"
 foreground = "{{ fg }}"
 
 [urgency_normal]
-background = "{{ bg0 }}"
+background = "{{ bg2 }}"
 foreground = "{{ fg }}"
 
 [urgency_critical]
-background = "{{ bg0 }}"
+background = "{{ bg2 }}"
 foreground = "{{ fg }}"
 frame_color = "{{ orange }}"
 
