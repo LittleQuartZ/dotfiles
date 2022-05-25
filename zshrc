@@ -56,10 +56,14 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 # Define completers
 zstyle ':completion:*' completer _extensions _complete _approximate
 
-zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
-zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
-zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
+# zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+# zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
+# zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
+# zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:*:*:*:corrections' format '(errors: %e)'
+zstyle ':completion:*:*:*:*:descriptions' format '%d'
+zstyle ':completion:*:*:*:*:messages' format '%d'
+zstyle ':completion:*:*:*:*:warnings' format 'no matches found'
 
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -68,9 +72,9 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 
 # source plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/fzf/key-bindings.zsh
+source /usr/share/zsh/plugins/fzf-tab-bin-git/fzf-tab.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg={{ grey0 }},underline"
 
@@ -124,6 +128,18 @@ vg() {
      nvim $file +$line
   fi
 }
+
+man() {
+    export LESS_TERMCAP_md=$'\e[01;31m' 
+    export LESS_TERMCAP_me=$'\e[0m' 
+    export LESS_TERMCAP_us=$'\e[01;32m' 
+    export LESS_TERMCAP_ue=$'\e[0m' 
+    # export LESS_TERMCAP_so=$'\e[45;93m' \
+    # export LESS_TERMCAP_se=$'\e[0m' \
+
+    command man "$@"
+}
+
 # alias
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias mirror-update='sudo reflector --verbose -c Indonesia -c Japan -c Singapore --sort rate --save /etc/pacman.d/mirrorlist'
@@ -163,7 +179,7 @@ alias sctl='sudo systemctl'
 alias gcb='git branch --list | fzf | sed 's/\*//' | xargs -ro git checkout'
 alias glf="git log --pretty='format:%C(auto)%aN %C(auto)%h (%s, %as)' | fzf | cut -d ' ' -f 2 | xargs -ro git log -p -n 1"
 
-export FZF_DEFAULT_OPTS='--color=bg+:{{ bg3 }},bg:{{ bg0 }},spinner:{{ orange }},hl:{{ red }} --color=fg:{{ fg }},header:{{ red }},info:{{ purple }},pointer:{{ orange }} --color=marker:{{ orange }},fg+:{{ yellow }},prompt:{{ purple }},hl+:{{ red }}'
+export FZF_DEFAULT_OPTS='--color=bg+:{{ bg5 }},bg:{{ bg2 }},spinner:{{ orange }},hl:{{ red }} --color=fg:{{ fg }},header:{{ red }},info:{{ purple }},pointer:{{ orange }} --color=marker:{{ orange }},fg+:{{ yellow }},prompt:{{ purple }},hl+:{{ red }}'
 export FZF_DEFAULT_COMMAND='rg --files'
 
 path+=('/home/syahdan/.local/bin')
@@ -172,14 +188,14 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 export SUDO_PROMPT='[] syahdan, '
 export BAT_THEME="base16"
-export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export SCREENRC="$HOME/.config/screen/screenrc"
+export CARGO_HOME="$HOME/.local/share/cargo"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
+export NODE_REPL_HISTORY="$HOME/.local/share/node_repl_history"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$HOME/.config/java"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
+alias wget="wget --hsts-file=$HOME/.local/share/wget-hsts"
+export XINITRC="$HOME/.config/X11/xinitrc"
 
 meow print --colour 32
 
@@ -190,7 +206,10 @@ meow print --colour 32
 
 # init starship
 eval "$(starship init zsh)"
+
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 eval "$(fnm env --use-on-cd)"
+eval $(thefuck --alias)
+
 # setup starship custom prompt
 
-eval $(thefuck --alias)
