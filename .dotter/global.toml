@@ -102,4 +102,4 @@ files = { "cfg/starship/starship.toml" = "~/.config/starship.toml"}
 
 [zsh]
 depends = ["colors"]
-files = { zshrc = "~/.config/zsh/.zshrc" }
+files = { zshrc = "~/.zshrc" }
