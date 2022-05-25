@@ -8,13 +8,16 @@ M.setup_lsp = function(attach, capabilities)
 
   for _, lsp in ipairs(servers) do
     if lsp == "emmet_ls" then
-      filetypes = { "html", "css", "javascriptreact" }
+      lspconfig[lsp].setup {
+        on_attach = attach,
+        capabilities = capabilities,
+        filetypes = { "html", "css", "javascriptreact", "javascript.jsx" },
+      }
     end
 
     lspconfig[lsp].setup {
       on_attach = attach,
       capabilities = capabilities,
-      filetypes = filetypes,
     }
   end
 end
