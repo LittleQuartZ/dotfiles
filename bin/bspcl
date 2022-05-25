@@ -10,9 +10,14 @@ notify() {
 
 case "$1" in
   "")
-    options="$(bsp-layout layouts)"
+    options="$(bsp-layout layouts)\nremove"
     chosen="$(echo "$options" | $rofi_command -p ' layouts ' -dmenu -selected-row 0)"
     if [ -n "$chosen" ]; then
+      if [ "$chosen" = remove ]; then
+        bsp-layout remove
+        notify "$focused"
+        return
+      fi
       bsp-layout set "$chosen"
       notify "$focused"
     fi

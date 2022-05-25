@@ -9,6 +9,7 @@ $character"""
 
 # right_format = """$all"""
 
+continuation_prompt = "󰮯  "
 # Inserts a blank line between shell prompts
 add_newline = true
 
