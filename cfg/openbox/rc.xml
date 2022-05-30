@@ -415,7 +415,26 @@
     </keybind>
     <!-- window control -->
     <keybind key="W-f">
-      <action name="ToggleMaximizeFull"/>
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="W-m">
+      <action name="If">
+        <query target="default">
+          <maximized>yes</maximized>
+        </query>
+        <then>
+          <action name="Execute">
+            <command>polybar-msg cmd show</command>
+          </action>
+          <action name="Unmaximize"/>
+        </then>
+        <else>
+          <action name="Execute">
+            <command>polybar-msg cmd hide</command>
+          </action>
+          <action name="Maximize"/>
+        </else>
+      </action>
     </keybind>
     <!-- volume control -->
     <keybind key="XF86AudioRaiseVolume">
@@ -507,7 +526,23 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximizeFull"/>
+        <action name="If">
+          <query target="default">
+            <maximized>yes</maximized>
+          </query>
+          <then>
+            <action name="Execute">
+              <command>polybar-msg cmd show</command>
+            </action>
+            <action name="Unmaximize"/>
+          </then>
+          <else>
+            <action name="Execute">
+              <command>polybar-msg cmd hide</command>
+            </action>
+            <action name="Maximize"/>
+          </else>
+        </action>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -670,16 +705,64 @@
         <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Click">
-        <action name="ToggleMaximize"/>
+        <action name="If">
+          <query target="default">
+            <maximized>yes</maximized>
+          </query>
+          <then>
+            <action name="Execute">
+              <command>polybar-msg cmd show</command>
+            </action>
+            <action name="Unmaximize"/>
+          </then>
+          <else>
+            <action name="Execute">
+              <command>polybar-msg cmd hide</command>
+            </action>
+            <action name="Maximize"/>
+          </else>
+        </action>
       </mousebind>
       <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximize">
-          <direction>vertical</direction>
+        <action name="If">
+          <query target="default">
+            <maximizedvertical>yes</maximizedvertical>
+          </query>
+          <then>
+            <action name="Execute">
+              <command>polybar-msg cmd show</command>
+            </action>
+            <action name="Unmaximize" direction="vertical"/>
+          </then>
+          <else>
+            <action name="Execute">
+              <command>polybar-msg cmd hide</command>
+            </action>
+            <action name="Maximize">
+              <direction>vertical</direction>
+            </action>
+          </else>
         </action>
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ToggleMaximize">
-          <direction>horizontal</direction>
+        <action name="If">
+          <query target="default">
+            <maximizedhorizontal>yes</maximizedhorizontal>
+          </query>
+          <then>
+            <action name="Execute">
+              <command>polybar-msg cmd show</command>
+            </action>
+            <action name="Unmaximize" direction="vertical"/>
+          </then>
+          <else>
+            <action name="Execute">
+              <command>polybar-msg cmd hide</command>
+            </action>
+            <action name="Maximize">
+              <direction>horizontal</direction>
+            </action>
+          </else>
         </action>
       </mousebind>
     </context>
