@@ -4,7 +4,7 @@ M.setup_lsp = function(attach, capabilities)
   local lspconfig = require "lspconfig"
 
   -- lspservers with default config
-  local servers = { "html", "cssls", "clangd", "emmet_ls", "eslint", "tailwindcss" }
+  local servers = { "html", "cssls", "clangd", "emmet_ls", "tailwindcss", "tsserver", "lemminx" }
 
   for _, lsp in ipairs(servers) do
     if lsp == "emmet_ls" then

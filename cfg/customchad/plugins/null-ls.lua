@@ -7,6 +7,7 @@ local sources = {
 
   b.formatting.eslint_d,
   b.diagnostics.eslint_d,
+  b.code_actions.eslint_d,
 
   b.diagnostics.tidy,
   b.formatting.xmllint,

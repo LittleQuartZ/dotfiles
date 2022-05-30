@@ -14,7 +14,7 @@ local function button(sc, txt, keybind)
     cursor = 5,
     width = 36,
     align_shortcut = "right",
-    hl = "AlphaButtons",
+    hl = "Comment",
   }
 
   if keybind then
@@ -53,23 +53,35 @@ options.header = {
   val = ascii,
   opts = {
     position = "center",
-    hl = "AlphaHeader",
+    hl = "Comment",
   },
 }
 
 options.buttons = {
   type = "group",
   val = {
-    button("SHIFT t", "  New File  ", "<cmd> enew <CR>"),
-    button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-    button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-    button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
-    button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-    button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
-    button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+    button("n", "  New", "<cmd> enew <CR>"),
+    button("o", "  Recent", ":Telescope oldfiles<CR>"),
+    button("f", "  Find", ":Telescope find_files<CR>"),
+    button("p", "  Projects", ":Telescope projects<CR>"),
+    button("w", "  Find Word", ":Telescope live_grep<CR>"),
+    button("s", "  Session", ":PackerLoad telescope.nvim<CR> :SessionManager load_session<CR>"),
+    button("c", "  Configuration", ":e $MYVIMRC | :cd %:p:h <CR>"),
   },
+  opts = { spacing = 1 },
+}
+
+options.footer = {
+  type = "text",
+  val = function()
+    local loaded_plugins = #vim.fn.globpath(vim.fn.stdpath "data" .. "/site/pack/packer/start", "*", 0, 1)
+    local total_plugins = #vim.tbl_keys(packer_plugins)
+
+    return "  " .. loaded_plugins .. "/" .. total_plugins .. " plugins loaded"
+  end,
   opts = {
-    spacing = 1,
+    position = "center",
+    hl = "Comment",
   },
 }
 
@@ -86,6 +98,10 @@ alpha.setup {
     options.header,
     { type = "padding", val = 2 },
     options.buttons,
+    { type = "padding", val = 2 },
+    options.footer,
   },
   opts = {},
 }
+
+vim.cmd [[autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2]]
