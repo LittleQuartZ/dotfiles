@@ -7,4 +7,3 @@ launch nvim
 new_tab
 cd ~/Desktop/dotfiles
 launch dotter watch
-launch zsh
