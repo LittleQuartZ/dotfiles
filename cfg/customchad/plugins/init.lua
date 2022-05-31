@@ -32,10 +32,10 @@ return {
     opt = true,
     ft = "kitty",
   },
-  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
-    run = "yarn install --frozen-lockfile && yarn compile",
-    event = "InsertEnter",
-  },
+  -- ["dsznajder/vscode-es7-javascript-react-snippets"] = {
+  --   run = "yarn install --frozen-lockfile && yarn compile",
+  --   event = "InsertEnter",
+  -- },
   ["stevearc/dressing.nvim"] = {
     event = "BufRead",
   },

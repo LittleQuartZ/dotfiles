@@ -85,8 +85,6 @@ options.footer = {
   },
 }
 
-options = nvchad.load_override(options, "goolord/alpha-nvim")
-
 -- dynamic header padding
 local fn = vim.fn
 local marginTopPercent = 0.2
