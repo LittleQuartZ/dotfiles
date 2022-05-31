@@ -1,0 +1,7 @@
+# vim:ft=kitty
+
+launch ncmpcpp
+
+new_tab
+launch btop -p 4
+
