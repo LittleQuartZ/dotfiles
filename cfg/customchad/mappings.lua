@@ -4,7 +4,7 @@ M.truezen = {
 
   n = {
     ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "  truezen ataraxis" },
-    ["<leader>tf"] = { "<cmd> TZAtaraxis <CR>", "  truezen focus" },
+    ["<leader>tf"] = { "<cmd> TZFocus <CR>", "  truezen focus" },
     ["<leader>tm"] = { "<cmd> TZMinimalist <CR>", "﫦 truezen minimalist" },
   },
 }

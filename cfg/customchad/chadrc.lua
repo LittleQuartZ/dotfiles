@@ -11,10 +11,7 @@ M.options = {
     vim.opt.showmode = false
 
     vim.opt.list = true
-    vim.opt.wrap = false
     vim.opt.listchars:append "space:⋅"
-
-    vim.g.did_load_filetypes = 1
   end,
 }
 
@@ -22,6 +19,7 @@ M.ui = {
   hl_override = {
     IndentBlanklineContextChar = {
       fg = "purple",
+      bg = "black",
     },
     -- rainbowcol1 = { fg = "red" },
     -- rainbowcol2 = { fg = "teal" },
@@ -33,6 +31,7 @@ M.ui = {
   },
 
   theme = "catppuccin",
+  transparency = true,
 }
 
 userPlugins = require "custom.plugins"
@@ -53,6 +52,7 @@ M.plugins = {
     ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
     ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
     ["nvim-telescope/telescope.nvim"] = override.telescope,
+    ["hrsh7th/nvim-cmp"] = override.cmp,
   },
 }
 

@@ -20,7 +20,7 @@ return {
       require("custom.plugins.truezen").setup()
     end,
   },
-  ["nathom/filetype.nvim"] = {}, -- not lazyloaded
+  -- ["nathom/filetype.nvim"] = {}, -- not lazyloaded
   ["turbio/bracey.vim"] = { cmd = { "Bracey", "BraceyEval", "BraceyStop", "BraceyReload" } },
   ["goolord/alpha-nvim"] = {
     disable = false,
@@ -118,5 +118,16 @@ return {
         },
       }
     end,
+  },
+  ["zbirenbaum/copilot.lua"] = {
+    event = "InsertEnter",
+    config = function()
+      vim.schedule(function()
+        require("copilot").setup()
+      end)
+    end,
+  },
+  ["zbirenbaum/copilot-cmp"] = {
+    after = { "copilot.lua", "nvim-cmp" },
   },
 }
