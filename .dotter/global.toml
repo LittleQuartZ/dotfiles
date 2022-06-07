@@ -94,6 +94,9 @@ files = { "cfg/polybar" = "~/.config/polybar" }
 [ranger]
 files = { "cfg/ranger" = "~/.config/ranger" }
 
+[redshift]
+files = { "cfg/redshift" = "~/.config/redshift" }
+
 [rofi]
 depends = ["colors"]
 files = { "cfg/rofi" = "~/.config/rofi" }
