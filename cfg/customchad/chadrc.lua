@@ -21,6 +21,10 @@ M.ui = {
       fg = "purple",
       bg = "black",
     },
+    Comment = {
+      fg = "grey_fg",
+      italic = true,
+    },
     -- rainbowcol1 = { fg = "red" },
     -- rainbowcol2 = { fg = "teal" },
     -- rainbowcol3 = { fg = "yellow" },
@@ -43,7 +47,7 @@ M.plugins = {
       setup_lspconf = "custom.plugins.lspconfig",
     },
     statusline = {
-      separator_style = "block", -- default/round/slant/block/arrow
+      separator_style = "round", -- default/round/block/
     },
   },
   user = userPlugins,
