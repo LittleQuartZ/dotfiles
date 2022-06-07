@@ -25,7 +25,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -416,25 +416,12 @@
     <!-- window control -->
     <keybind key="W-f">
       <action name="ToggleFullscreen"/>
+      <action name="Execute">
+        <command>polybar-msg cmd toggle</command>
+      </action>
     </keybind>
     <keybind key="W-m">
-      <action name="If">
-        <query target="default">
-          <maximized>yes</maximized>
-        </query>
-        <then>
-          <action name="Execute">
-            <command>polybar-msg cmd show</command>
-          </action>
-          <action name="Unmaximize"/>
-        </then>
-        <else>
-          <action name="Execute">
-            <command>polybar-msg cmd hide</command>
-          </action>
-          <action name="Maximize"/>
-        </else>
-      </action>
+      <action name="ToggleMaximize"/>
     </keybind>
     <!-- volume control -->
     <keybind key="XF86AudioRaiseVolume">
@@ -526,23 +513,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="If">
-          <query target="default">
-            <maximized>yes</maximized>
-          </query>
-          <then>
-            <action name="Execute">
-              <command>polybar-msg cmd show</command>
-            </action>
-            <action name="Unmaximize"/>
-          </then>
-          <else>
-            <action name="Execute">
-              <command>polybar-msg cmd hide</command>
-            </action>
-            <action name="Maximize"/>
-          </else>
-        </action>
+        <action name="ToggleMaximize"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -705,64 +676,16 @@
         <action name="Unshade"/>
       </mousebind>
       <mousebind button="Left" action="Click">
-        <action name="If">
-          <query target="default">
-            <maximized>yes</maximized>
-          </query>
-          <then>
-            <action name="Execute">
-              <command>polybar-msg cmd show</command>
-            </action>
-            <action name="Unmaximize"/>
-          </then>
-          <else>
-            <action name="Execute">
-              <command>polybar-msg cmd hide</command>
-            </action>
-            <action name="Maximize"/>
-          </else>
-        </action>
+        <action name="ToggleMaximize"/>
       </mousebind>
       <mousebind button="Middle" action="Click">
-        <action name="If">
-          <query target="default">
-            <maximizedvertical>yes</maximizedvertical>
-          </query>
-          <then>
-            <action name="Execute">
-              <command>polybar-msg cmd show</command>
-            </action>
-            <action name="Unmaximize" direction="vertical"/>
-          </then>
-          <else>
-            <action name="Execute">
-              <command>polybar-msg cmd hide</command>
-            </action>
-            <action name="Maximize">
-              <direction>vertical</direction>
-            </action>
-          </else>
+        <action name="ToggleMaximize">
+          <direction>vertical</direction>
         </action>
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="If">
-          <query target="default">
-            <maximizedhorizontal>yes</maximizedhorizontal>
-          </query>
-          <then>
-            <action name="Execute">
-              <command>polybar-msg cmd show</command>
-            </action>
-            <action name="Unmaximize" direction="vertical"/>
-          </then>
-          <else>
-            <action name="Execute">
-              <command>polybar-msg cmd hide</command>
-            </action>
-            <action name="Maximize">
-              <direction>horizontal</direction>
-            </action>
-          </else>
+        <action name="ToggleMaximize">
+          <direction>horizontal</direction>
         </action>
       </mousebind>
     </context>

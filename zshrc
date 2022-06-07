@@ -170,6 +170,7 @@ alias vf='fzf | xargs -ro nvim'
 alias mv='mv -v'
 alias cp='cp -vr'
 alias rm='rm -vr'
+alias pfetch="echo ; pfetch"
 
 alias d="kitty +kitten diff"
 alias gd="git difftool --no-symlinks --dir-diff"

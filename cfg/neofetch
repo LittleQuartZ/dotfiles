@@ -698,7 +698,7 @@ image_backend="kitty"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="wallpaper"
+image_source="/home/syahdan/Pictures/cybergirl.png"
 #image_source=$HOME/".config/neofetch/arcolinux-blue-dark.png"
 #image_source=$HOME/".config/neofetch/arcolinux.png"
 #image_source=$HOME/".config/neofetch/arcolinux-arc.png"
@@ -718,7 +718,7 @@ image_source="wallpaper"
 #image_source=$HOME/".config/neofetch/arcolinux-numix.png"
 #image_source=$HOME/".config/neofetch/arcolinux-orchid.png"
 #image_source=$HOME/".config/neofetch/arcolinux-paper.png"
-# image_source=$HOME/".config/neofetch/arcolinux-violet.png"
+#image_source=$HOME/".config/neofetch/arcolinux-violet.png"
 #image_source=$HOME/".config/neofetch/arcolinux-polo.png"
 #image_source=$HOME/".config/neofetch/arcolinux-punch.png"
 #image_source=$HOME/".config/neofetch/arcolinux-smoke.png"

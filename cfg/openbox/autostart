@@ -1,8 +1,8 @@
 picom --experimental-backends --config ~/.config/openbox/picom.conf &
 ~/.config/polybar/launch.sh openbox &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-xinput set-prop "MSFT0001:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1 &
 nitrogen --restore &
 xmodmap $HOME/.Xmodmap &
 xsetroot -cursor_name left_ptr &
 nm-applet &
+plank &
