@@ -55,7 +55,7 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>no</keepBorder>
-    <animateIconify>no</animateIconify>
+    <animateIconify>true</animateIconify>
     <font place="ActiveWindow">
       <name>JetBrainsMono Nerd Font Mono</name>
       <size>10</size>
