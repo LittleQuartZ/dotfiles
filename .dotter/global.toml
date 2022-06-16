@@ -65,7 +65,7 @@ files = { "cfg/eww" = "~/.config/eww" }
 
 [firefox]
 depends = ["colors"]
-files = { "mozchrome" = "~/.mozilla/firefox/9om0wumt.default-release/chrome" }
+files = { "mozchrome" = "~/.mozilla/firefox/aqops9ab.default-release/chrome" }
 
 [fonts]
 files = { "fonts" = {target = "~/.fonts", type = "symbolic"} }
@@ -88,7 +88,7 @@ depends = ["polybar", "rofi", "dunst", "colors"]
 files = { "cfg/openbox" = "~/.config/openbox", "themes/openbox-3" = "~/.themes/openbox/openbox-3" }
 
 [polybar]
-depends = ["colors"]
+depends = ["colors", "dunst"]
 files = { "cfg/polybar" = "~/.config/polybar" }
 
 [ranger]
