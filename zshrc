@@ -184,6 +184,8 @@ export FZF_DEFAULT_OPTS='--color=bg+:{{ bg5 }},bg:{{ bg2 }},spinner:{{ orange }}
 export FZF_DEFAULT_COMMAND='rg --files'
 
 path+=('/home/syahdan/.local/bin')
+path+=('/home/syahdan/.yarn/bin')
+path+=('/home/syahdan/.local/share/cargo/bin')
 export PATH
 export EDITOR="nvim"
 export TERMINAL="kitty"
