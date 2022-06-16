@@ -57,6 +57,7 @@ M.plugins = {
     ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
     ["nvim-telescope/telescope.nvim"] = override.telescope,
     ["hrsh7th/nvim-cmp"] = override.cmp,
+    ["numToStr/Comment.nvim"] = override.comment,
   },
 }
 
