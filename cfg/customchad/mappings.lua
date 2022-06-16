@@ -57,10 +57,10 @@ M.lspconfig = {
 
   n = {
 
-    ["<leader>ra"] = {
-      "<cmd>Lspsaga rename<CR>",
-      "   lsp rename",
-    },
+    -- ["<leader>ra"] = {
+    --   "<cmd>Lspsaga rename<CR>",
+    --   "   lsp rename",
+    -- },
 
     ["<leader>ca"] = {
       "<cmd>Lspsaga code_action<CR>",
