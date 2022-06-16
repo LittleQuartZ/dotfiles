@@ -1,6 +1,6 @@
 picom --experimental-backends --config ~/.config/openbox/picom.conf &
 ~/.config/polybar/launch.sh openbox &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+lxsession &
 nitrogen --restore &
 xmodmap $HOME/.Xmodmap &
 xsetroot -cursor_name left_ptr &

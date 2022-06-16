@@ -48,7 +48,7 @@ done
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 # sxhkd &
-start /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+start lxsession
 # usr/bin/dunst &
 start "$HOME"/.config/polybar/launch.sh bspwm
 start mopidy

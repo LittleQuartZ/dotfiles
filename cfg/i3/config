@@ -38,7 +38,7 @@ exec_always nitrogen --restore
 exec_always i3-layouts
 exec_always "~/.config/polybar/launch.sh i3"
 exec_always xsetroot -cursor_name left_ptr
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always lxsession
 
 font pango:JetBrainsMono Nerd Font 12
 
