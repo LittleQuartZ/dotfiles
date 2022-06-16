@@ -19,7 +19,6 @@ M.ui = {
   hl_override = {
     IndentBlanklineContextChar = {
       fg = "purple",
-      bg = "black",
     },
     Comment = {
       fg = "grey_fg",
