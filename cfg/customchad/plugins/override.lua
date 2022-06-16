@@ -86,9 +86,9 @@ M.telescope = {
 
 M.cmp = {
   sources = {
+    { name = "buffer" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
     { name = "copilot" },
