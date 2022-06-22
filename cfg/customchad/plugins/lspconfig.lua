@@ -13,12 +13,12 @@ M.setup_lsp = function(attach, capabilities)
         capabilities = capabilities,
         filetypes = { "html", "css", "javascriptreact", "javascript.jsx" },
       }
+    else
+      lspconfig[lsp].setup {
+        on_attach = attach,
+        capabilities = capabilities,
+      }
     end
-
-    lspconfig[lsp].setup {
-      on_attach = attach,
-      capabilities = capabilities,
-    }
   end
 end
 
