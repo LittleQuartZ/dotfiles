@@ -33,6 +33,10 @@ M.ui = {
     -- rainbowcol7 = { fg = "white" },
   },
 
+  statusline = {
+    separator_style = "round", -- default/round/block/
+  },
+
   theme = "catppuccin",
   transparency = true,
 }
@@ -44,9 +48,6 @@ M.plugins = {
   options = {
     lspconfig = {
       setup_lspconf = "custom.plugins.lspconfig",
-    },
-    statusline = {
-      separator_style = "round", -- default/round/block/
     },
   },
   user = userPlugins,
