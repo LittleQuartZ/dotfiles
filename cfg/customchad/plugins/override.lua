@@ -32,9 +32,10 @@ M.treesitter = {
   },
 }
 
--- local tree_cb = require "nvim-tree.config.nvim_tree_callback"
-
 M.nvimtree = {
+  filters = {
+    dotfiles = true,
+  },
   create_in_closed_folder = true,
   respect_buf_cwd = true,
   update_cwd = true,
@@ -50,9 +51,9 @@ M.nvimtree = {
     mappings = {
       custom_only = false,
       list = {
-        -- { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        -- { key = "h", cb = tree_cb "close_node" },
-        -- { key = "v", cb = tree_cb "vsplit" },
+        { key = { "l", "<CR>", "o" }, action = "edit" },
+        { key = "h", action = "close_node" },
+        { key = "v", action = "vsplit" },
       },
     },
   },
@@ -85,11 +86,23 @@ M.telescope = {
 }
 
 M.cmp = {
+  formatting = {
+    format = function(entry, vim_item)
+      local icons = require("ui.icons").lspkind
+      if entry.source.name == "copilot" then
+        vim_item.kind = "  Copilot"
+        vim_item.kind_hl_group = "TSTitle"
+      else
+        vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+      end
+      return vim_item
+    end,
+  },
   sources = {
-    { name = "buffer" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
+    { name = "buffer" },
     { name = "path" },
     { name = "copilot" },
   },
