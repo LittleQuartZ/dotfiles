@@ -3,9 +3,9 @@ local b = null_ls.builtins
 
 local sources = {
 
-  b.formatting.prettierd.with { filetypes = { "html", "markdown", "css" } },
+  b.formatting.prettierd,
 
-  b.formatting.eslint_d,
+  -- b.formatting.eslint_d,
   b.diagnostics.eslint_d,
   b.code_actions.eslint_d,
 
