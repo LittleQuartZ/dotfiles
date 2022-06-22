@@ -140,9 +140,17 @@ man() {
     command man "$@"
 }
 
+touch() {
+  if [[ "$@" = */* ]]; then
+    mkdir -p "${@%/*}"
+  fi
+
+  command touch "$@"
+}
+
 # alias
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias mirror-update='sudo reflector --verbose -c Indonesia -c Japan -c Singapore --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirror-update='sudo reflector --verbose -c Indonesia -c Japan -c Singapore --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias mtar='tar -zcvf' # mtar <archive_compress>
 alias utar='tar -zxvf' # utar <archive_decompress> <file_list>
 alias z='zip -r' # z <archive_compress> <file_list>
@@ -158,7 +166,7 @@ alias pars="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | a
 alias pacr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 alias p="pacman -Q | fzf"
 alias wifi="nmtui-connect"
-alias ls="exa --color=auto --icons"
+alias ls="exa --color=auto --icons --sort type"
 alias l="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
