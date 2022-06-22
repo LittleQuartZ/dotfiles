@@ -32,14 +32,14 @@ return {
     opt = true,
     ft = "kitty",
   },
-  -- ["dsznajder/vscode-es7-javascript-react-snippets"] = {
-  --   run = "yarn install --frozen-lockfile && yarn compile",
-  --   event = "InsertEnter",
-  -- },
-  ["stevearc/dressing.nvim"] = {
-    event = "BufRead",
+  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
+    run = "yarn install --frozen-lockfile && yarn compile",
+    event = "InsertEnter",
   },
-  ["JoosepAlviste/nvim-ts-context-commentstring"] = { ft = { "javascriptreact", "typescriptreact" } },
+  -- ["stevearc/dressing.nvim"] = {
+  --   event = "BufRead",
+  -- },
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
   ["https://github.com/windwp/nvim-ts-autotag"] = {
     before = "nvim-treesitter",
     opt = true,
@@ -119,15 +119,21 @@ return {
       }
     end,
   },
+  -- Copilot
+  -- ["github/copilot.vim"] = {},
   ["zbirenbaum/copilot.lua"] = {
-    event = "InsertEnter",
+    event = { "VimEnter" },
     config = function()
-      vim.schedule(function()
+      -- vim.schedule(function()
+      --   require("copilot").setup()
+      -- end)
+      vim.defer_fn(function()
         require("copilot").setup()
-      end)
+      end, 100)
     end,
   },
   ["zbirenbaum/copilot-cmp"] = {
-    after = { "copilot.lua", "nvim-cmp" },
+    after = { "copilot.lua" },
+    before = { "nvim-cmp" },
   },
 }
