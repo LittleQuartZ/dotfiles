@@ -9,7 +9,7 @@
     height = 300
     scale = 0
 
-    origin = top-left
+    origin = top-right
     offset = 20x60
 
     notification_limit = 0
