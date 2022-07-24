@@ -1,3 +1,14 @@
+st.font: Rec Mono Casual:pixelsize=18:antialias=true:autohint=true
+st.fontalt0: Symbols Nerd Font Mono:pixelsize=16:antialias=true:autohint=true
+st.borderpx: 20
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 *background: {{ bg2 }}
 *foreground: {{ fg }}
 
