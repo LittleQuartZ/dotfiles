@@ -1,9 +1,9 @@
 # vim:ft=kitty
-font_family      Recursive
+font_family      Rec Mono Casual
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-font_size        14
+font_size        15
 
 confirm_os_window_close 0
 
@@ -45,8 +45,6 @@ map ctrl+shift+p>shift+f kitten hints --type path
 map ctrl+shift+p>w kitten hints --type word --program -
 map kitty_mod+z toggle_layout stack
 map ctrl+k clear_terminal to_cursor active
-
-# {{ schemename }}
 
 foreground            {{ fg }}
 background            {{ bg2 }}

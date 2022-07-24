@@ -1,6 +1,4 @@
 # vim:ft=kitty
-pygments_style  catppuccin
-
 background #1e1e2e
 foreground #d9e0ee
 
