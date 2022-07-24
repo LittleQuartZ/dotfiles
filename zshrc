@@ -148,6 +148,13 @@ touch() {
   command touch "$@"
 }
 
+kitwin(){
+  local windows=$(kitty @ ls)
+  local selected=$(echo $windows | jq '.[] | select(.is_focused) | .tabs | .[] | .windows | .[] | .title' | fzf | sed 's/\"//g')
+  local pid=$(echo $windows | jq '.[] | select(.is_focused) | .tabs | .[] | .windows | .[] | select(.title == $selected) | .pid' --arg selected "$selected")
+  kitty @ focus-window -m=pid:"$pid"
+}
+
 # alias
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias mirror-update='sudo reflector --verbose -c Indonesia -c Japan -c Singapore --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
@@ -170,7 +177,7 @@ alias ls="exa --color=auto --icons --sort type"
 alias l="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
-alias lt="ls --tree"
+alias lt="ls --tree --level 2"
 alias cat="bat --color always --plain"
 alias grep='grep --color=auto'
 alias v='nvim'
@@ -224,3 +231,9 @@ eval $(thefuck --alias)
 
 # setup starship custom prompt
 
+# bun completions
+[ -s "/home/syahdan/.bun/_bun" ] && source "/home/syahdan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/home/syahdan/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
