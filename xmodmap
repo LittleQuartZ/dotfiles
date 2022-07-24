@@ -3,11 +3,12 @@
 
 clear Lock
 keycode 65 = space NoSymbol BackSpace
-keycode 66 = Escape NoSymbol Escape
-keycode 9 = Caps_Lock NoSymbol Caps_Lock 
+! keycode 66 = Escape NoSymbol Escape
+! keycode 9 = Caps_Lock NoSymbol Caps_Lock 
 keycode 108 = Mode_switch
 keycode 31 = i I i I
 keycode 43 = h H Left H
 keycode 44 = j J Down J
 keycode 45 = k K Up K
 keycode 46 = l L Right L
+keycode 135 = Super_L NoSymbol Super_L
