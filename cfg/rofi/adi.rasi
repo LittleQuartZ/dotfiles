@@ -7,7 +7,7 @@ configuration {
     show-icons: true;
     sidebar-mode: true;
     scroll-method: 1;
-    window-format: "[{w}] ··· {c} ···   {t}";
+    window-format: "[{w}] {c} {t}";
     click-to-exit: true;
     combi-hide-mode-prefix: false;
     display-window: "";
@@ -16,6 +16,7 @@ configuration {
     display-ssh: "";
     display-drun: "";
     display-combi: "";
+    display-file-browser-extended: "";
 }
 
 @import "colors.rasi"
@@ -30,13 +31,13 @@ window {
     border-color: @border;
     border-radius: 10px;
     width: 500px;
-    height: 0px;
+    height: 500px;
 }
 
 prompt {
     spacing: 0;
     border: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: @on;
     text-color: @background;
     padding: 6px 14px 6px 10px;
@@ -131,7 +132,7 @@ element selected.normal {
     background-color: @selected;
     text-color: @background;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 10px;
     border-color: @selected;
 }
 element selected.urgent {
@@ -162,14 +163,14 @@ sidebar {
 }
 
 button {
-    margin: 5px 0px 0px 0px;
+    margin: 5px 5px 0px 5px;
     horizontal-align: 0.5;
     vertical-align: 0.5;
     padding: 8px;
-    background-color: @background;
+    background-color: @background-alt;
     text-color: @foreground;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 10px;
     border-color: @selected;
 }
 
@@ -177,7 +178,7 @@ button selected {
     background-color: @on;
     text-color: @background;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 10px;
     border-color: @selected;
 }
 
@@ -185,7 +186,7 @@ scrollbar {
     width: 4px;
     border: 0px;
     handle-color: @foreground;
-    handle-width: 8px;
+    handle-width: 10px;
     padding: 0;
 }
 
