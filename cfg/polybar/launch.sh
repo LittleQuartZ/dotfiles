@@ -16,6 +16,8 @@ for m in $(polybar --list-monitors | cut -d":" -f1); do
   export TRAY_POSITION=none
   if [[ $m == "eDP" ]]; then
     export TRAY_POSITION=right
+  elif [[ $m = "HDMI-A-0" ]]; then
+    export TRAY_POSITION=right
   fi
   polybar "$1" -c ~/.config/polybar/config.ini 2>&1 | tee -a "/tmp/polybar_$1.log" &
   disown
