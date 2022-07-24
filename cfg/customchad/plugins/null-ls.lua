@@ -3,7 +3,11 @@ local b = null_ls.builtins
 
 local sources = {
 
-  b.formatting.prettierd,
+  b.formatting.prettierd.with {
+    env = {
+      PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.config/nvim/lua/custom/plugins/null-ls/.prettierrc.json",
+    },
+  },
 
   -- b.formatting.eslint_d,
   b.diagnostics.eslint_d,

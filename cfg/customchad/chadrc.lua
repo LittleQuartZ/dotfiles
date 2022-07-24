@@ -9,9 +9,13 @@ M.options = {
   user = function()
     vim.opt.scrolloff = 8
     vim.opt.showmode = false
+    vim.opt.shiftwidth = 2
 
     vim.opt.list = true
-    vim.opt.listchars:append "space:⋅"
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    -- vim.opt.listchars:append "space:⋅"
+    -- vim.opt.listchars:append "eol:↴"
   end,
 }
 
@@ -33,8 +37,10 @@ M.ui = {
     -- rainbowcol7 = { fg = "white" },
   },
 
-  statusline = {
-    separator_style = "round", -- default/round/block/
+  hl_add = {
+    Copilot = {
+      fg = "yellow",
+    },
   },
 
   theme = "catppuccin",

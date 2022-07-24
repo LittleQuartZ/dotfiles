@@ -13,6 +13,14 @@ M.setup_lsp = function(attach, capabilities)
         capabilities = capabilities,
         filetypes = { "html", "css", "javascriptreact", "javascript.jsx" },
       }
+    elseif lsp == "tsserver" then
+      lspconfig[lsp].setup {
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,
+        },
+        on_attach = attach,
+        capabilities = capabilities,
+      }
     else
       lspconfig[lsp].setup {
         on_attach = attach,

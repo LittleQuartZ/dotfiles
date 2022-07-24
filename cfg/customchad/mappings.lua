@@ -22,19 +22,9 @@ M.bufferline = {
 M.general = {
 
   n = {
-    ["<C-Up>"] = { "<cmd>resize +2 <CR>", "resize up" },
-    ["<C-Down>"] = { "<cmd>resize -2 <CR>", "resize down" },
-    ["<C-Right>"] = { "<cmd>vertical resize -2 <CR>", "resize right" },
-    ["<C-Left>"] = { "<cmd>vertical resize +2 <CR>", "resize left" },
-
     ["<C-q>"] = { "<C-w>q", "  close window" },
   },
 
-  t = {
-    ["<C-Up>"] = { "<cmd>resize +2 <CR>", "resize up" },
-    ["<C-Down>"] = { "<cmd>resize -2 <CR>", "resize down" },
-    ["<C-Right>"] = { "<cmd>vertical resize -2 <CR>", "resize right" },
-    ["<C-Left>"] = { "<cmd>vertical resize +2 <CR>", "resize left" },
   },
 }
 
@@ -83,8 +73,21 @@ M.lspconfig = {
     },
 
     ["gr"] = {
-      "<cmd>Lspsaga lsp_finder<CR>",
-      "  lsp finder",
+      "<cmd>Telescope lsp_references<CR>",
+      "  lsp references",
+    },
+  },
+}
+
+M.rest = {
+  n = {
+    ["<leader>rs"] = {
+      "<Plug>RestNvim",
+      "send request behind the cursor",
+    },
+    ["<leader>rl"] = {
+      "<Plug>RestNvimLast",
+      "send last request",
     },
   },
 }

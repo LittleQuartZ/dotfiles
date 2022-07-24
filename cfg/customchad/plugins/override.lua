@@ -68,7 +68,6 @@ M.nvimtree = {
 
 M.blankline = {
   char = "│",
-  space_char_blankline = " ",
   show_current_context = true,
   show_first_indent_level = true,
   context_pattern_highlight = {
@@ -88,10 +87,10 @@ M.telescope = {
 M.cmp = {
   formatting = {
     format = function(entry, vim_item)
-      local icons = require("ui.icons").lspkind
+      local icons = require("nvchad_ui.icons").lspkind
       if entry.source.name == "copilot" then
         vim_item.kind = "  Copilot"
-        vim_item.kind_hl_group = "TSTitle"
+        vim_item.kind_hl_group = "Copilot"
       else
         vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
       end
@@ -100,9 +99,9 @@ M.cmp = {
   },
   sources = {
     { name = "luasnip" },
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
+    { name = "nvim_lsp", max_item_count = 15 },
     { name = "buffer" },
+    { name = "nvim_lua" },
     { name = "path" },
     { name = "copilot" },
   },
