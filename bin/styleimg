@@ -1,0 +1,9 @@
+#!/bin/bash
+SCREENSHOTFOLDER="$HOME/Pictures/Screenshots/styled"
+FILE="${1}"
+FILENAME="${FILE##*/}"
+FILEBASE="${FILENAME%.*}"
+SYSTEMHOST=`uname -n`
+
+convert "${FILE}" \( +clone -background black -shadow 40x20+0+0 \) \
+  +swap -background "{{ accent }}" -layers merge +repage "$SCREENSHOTFOLDER/${FILEBASE}.png"

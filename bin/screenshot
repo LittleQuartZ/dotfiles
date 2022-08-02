@@ -14,6 +14,7 @@ file="Screenshot_${time}_${geometry}.png"
 screen="  fullscreen"
 area="  selection"
 window="  window"
+windowstyled="  window styled"
 infive="祥 5 seconds"
 inten="祥 10 seconds"
 
@@ -59,6 +60,13 @@ shotwin() {
   notify_view
 }
 
+shotwinstyled() {
+  cd ${dir} && maim -u -f png -i $(xdotool getactivewindow) | tee "$file"
+  ~/.local/bin/styleimg "$file";
+  xclip -selection clipboard -t image/png -i "./styled/$file"
+  feh "./styled/$file"
+}
+
 shotarea() {
   cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee "$file" | xclip -selection clipboard -t image/png
   notify_view
@@ -69,7 +77,7 @@ if [[ ! -d "$dir" ]]; then
 fi
 
 # Variable passed to rofi
-options="$screen\n$area\n$window\n$infive\n$inten"
+options="$screen\n$area\n$window\n$infive\n$inten\n$windowstyled"
 
 chosen="$(echo -e "$options" | $rofi_command -p ' screenshot ' -dmenu -selected-row 0)"
 case $chosen in
@@ -81,6 +89,9 @@ case $chosen in
     ;;
   $window)
     shotwin
+    ;;
+  $windowstyled)
+    shotwinstyled
     ;;
   $infive)
     shot5
