@@ -67,7 +67,7 @@ macos_titlebar_color system
 
 # Tab bar colors
 active_tab_foreground   {{ bg0 }}
-active_tab_background   {{ purple }}
+active_tab_background   {{ accent }}
 inactive_tab_foreground {{ fg }}
 inactive_tab_background {{ bg1 }}
 tab_bar_background      {{ bg0 }}
