@@ -1,8 +1,7 @@
--- example file i.e lua/custom/init.lua
+vim.opt.scrolloff = 8
+vim.opt.showmode = false
+vim.opt.shiftwidth = 2
 
-vim.cmd [[augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.html mkview
-  autocmd BufWinEnter *.html silent! loadview
-augroup END]]
--- load your globals, autocmds here or anything .__.
+vim.opt.list = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

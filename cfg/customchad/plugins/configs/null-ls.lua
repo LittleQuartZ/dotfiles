@@ -1,11 +1,16 @@
-local null_ls = require "null-ls"
+local present, null_ls = pcall(require, "null-ls")
+
+if not present then
+  return
+end
+
 local b = null_ls.builtins
 
 local sources = {
 
   b.formatting.prettierd.with {
     env = {
-      PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.config/nvim/lua/custom/plugins/null-ls/.prettierrc.json",
+      PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.config/nvim/lua/custom/plugins/null-ls/prettierrc.js",
     },
   },
 
@@ -22,11 +27,11 @@ local sources = {
   b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
 
   -- Shell
-  b.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
-  b.code_actions.shellcheck,
-  b.diagnostics.shellcheck,
+  -- b.formatting.shfmt.with { extra_args = { "-i", "2", "-ci" } },
+  -- b.code_actions.shellcheck,
+  -- b.diagnostics.shellcheck,
 
-  b.diagnostics.pylint,
+  -- b.diagnostics.pylint,
   -- b.formatting.black,
 }
 

@@ -4,6 +4,8 @@ if not present then
   return
 end
 
+require("base46").load_highlight "alpha"
+
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
@@ -87,7 +89,7 @@ options.footer = {
 
 -- dynamic header padding
 local fn = vim.fn
-local marginTopPercent = 0.2
+local marginTopPercent = 0.3
 local headerPadding = fn.max { 2, fn.floor(fn.winheight(0) * marginTopPercent) }
 
 alpha.setup {
@@ -101,5 +103,3 @@ alpha.setup {
   },
   opts = {},
 }
-
-vim.cmd [[autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2]]

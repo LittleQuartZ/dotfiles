@@ -1,23 +1,7 @@
--- Just an example, supposed to be placed in /lua/custom/
-
+local override = require "custom.plugins.override"
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
-
-M.options = {
-  user = function()
-    vim.opt.scrolloff = 8
-    vim.opt.showmode = false
-    vim.opt.shiftwidth = 2
-
-    vim.opt.list = true
-    vim.opt.foldmethod = "expr"
-    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    -- vim.opt.listchars:append "space:⋅"
-    -- vim.opt.listchars:append "eol:↴"
-  end,
-}
+-- ref: core/default_config.lua
 
 M.ui = {
   hl_override = {
@@ -28,13 +12,6 @@ M.ui = {
       fg = "grey_fg",
       italic = true,
     },
-    -- rainbowcol1 = { fg = "red" },
-    -- rainbowcol2 = { fg = "teal" },
-    -- rainbowcol3 = { fg = "yellow" },
-    -- rainbowcol4 = { fg = "blue" },
-    -- rainbowcol5 = { fg = "pink" },
-    -- rainbowcol6 = { fg = "orange" },
-    -- rainbowcol7 = { fg = "white" },
   },
 
   hl_add = {
@@ -43,20 +20,12 @@ M.ui = {
     },
   },
 
-  theme = "catppuccin",
+  theme = "rxyhn",
   transparency = true,
 }
 
-userPlugins = require "custom.plugins"
-override = require "custom.plugins.override"
-
 M.plugins = {
-  options = {
-    lspconfig = {
-      setup_lspconf = "custom.plugins.lspconfig",
-    },
-  },
-  user = userPlugins,
+  user = require "custom.plugins",
   override = {
     ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
     ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
@@ -68,11 +37,5 @@ M.plugins = {
 }
 
 M.mappings = require "custom.mappings"
-
-M.bufferline = {
-  n = {
-    ["<S-b>"] = "",
-  },
-}
 
 return M

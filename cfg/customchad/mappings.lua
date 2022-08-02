@@ -1,7 +1,6 @@
 local M = {}
 
 M.truezen = {
-
   n = {
     ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "  truezen ataraxis" },
     ["<leader>tf"] = { "<cmd> TZFocus <CR>", "  truezen focus" },
@@ -9,13 +8,30 @@ M.truezen = {
   },
 }
 
-M.bufferline = {
+M.tabufline = {
 
   n = {
-    ["<S-l>"] = { "<cmd>tabnext <CR>", "  cycle next tab" },
-    ["<S-h>"] = { "<cmd>tabprev <CR>", "  cycle prev tab" },
-
+    -- new buffer
+    ["<S-b>"] = {},
     ["<S-t>"] = { "<cmd> enew <CR>", "烙 new buffer" },
+
+    -- cycle through buffers
+    ["<TAB>"] = { "<cmd> Tbufnext <CR>", "  goto next buffer" },
+    ["<S-Tab>"] = { "<cmd> Tbufprev <CR> ", "  goto prev buffer" },
+
+    -- cycle through tabs
+    ["<leader>tp"] = {},
+    ["<leader>tn"] = {},
+    ["<S-l>"] = { "<cmd> tabnext <CR>", "  goto next tab" },
+    ["<S-h>"] = { "<cmd> tabprevious <CR> ", "  goto prev tab" },
+
+    -- close buffer + hide terminal buffer
+    ["<leader>x"] = {
+      function()
+        require("core.utils").close_buffer()
+      end,
+      "   close buffer",
+    },
   },
 }
 
@@ -25,6 +41,8 @@ M.general = {
     ["<C-q>"] = { "<C-w>q", "  close window" },
   },
 
+  i = {
+    ["<C-z>"] = { "<ESC>ciw", "undo in insert mode" },
   },
 }
 

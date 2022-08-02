@@ -1,103 +1,25 @@
 return {
+
+  -- TEMP FIX
   ["NvChad/ui"] = {
-    statusline = {
-      separator_style = "round",
-    },
+    after = "base46",
+    commit = "6d18c5482b30bbcb02ac20049f2b0b67be9ea164",
+    config = function()
+      require("plugins.configs.others").nvchad_ui()
+    end,
   },
-  ["elkowar/yuck.vim"] = {
-    opt = true,
-    ft = "yuck",
+
+  -- Languages Options
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.configs.lspconfig"
+    end,
   },
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
-      require("custom.plugins.null-ls").setup()
-    end,
-  },
-  ["lambdalisue/suda.vim"] = { cmd = { "SudaRead", "SudaWrite" } },
-  ["Pocco81/TrueZen.nvim"] = {
-    cmd = {
-      "TZAtaraxis",
-      "TZMinimalist",
-      "TZFocus",
-    },
-    config = function()
-      require("custom.plugins.truezen").setup()
-    end,
-  },
-  -- ["nathom/filetype.nvim"] = {}, -- not lazyloaded
-  ["turbio/bracey.vim"] = { cmd = { "Bracey", "BraceyEval", "BraceyStop", "BraceyReload" } },
-  ["goolord/alpha-nvim"] = {
-    disable = false,
-    config = function()
-      require "custom.plugins.alpha"
-    end,
-  },
-  ["fladson/vim-kitty"] = {
-    opt = true,
-    ft = "kitty",
-  },
-  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
-    run = "yarn install --frozen-lockfile && yarn compile",
-    event = "InsertEnter",
-  },
-  -- ["stevearc/dressing.nvim"] = {
-  --   event = "BufRead",
-  -- },
-  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
-  ["https://github.com/windwp/nvim-ts-autotag"] = {
-    before = "nvim-treesitter",
-    opt = true,
-    ft = {
-      "html",
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "svelte",
-      "vue",
-      "tsx",
-      "jsx",
-      "rescript",
-      "xml",
-      "php",
-      "markdown",
-      "glimmer",
-      "handlebars",
-      "hbs",
-    },
-  },
-  ["ahmedkhalf/project.nvim"] = {
-    event = "BufRead",
-    ft = "alpha",
-    config = function()
-      require("project_nvim").setup()
-    end,
-  },
-  ["ggandor/leap.nvim"] = {
-    event = "BufRead",
-    config = function()
-      require("leap").set_default_keymaps()
-    end,
-  },
-  ["Shatur/neovim-session-manager"] = {
-    cmd = "SessionManager",
-    event = "BufRead",
-    config = function()
-      local Path = require "plenary.path"
-      require("session_manager").setup {
-        sessions_dir = Path:new(vim.fn.stdpath "data", "sessions"),
-        path_replacer = "__",
-        colon_replacer = "++",
-        autoload_mode = require("session_manager.config").AutoloadMode.Disabled,
-        autosave_last_session = true,
-        autosave_ignore_not_normal = true,
-        autosave_ignore_filetypes = {
-          "gitcommit",
-        },
-        autosave_only_in_session = true,
-        max_path_length = 80,
-      }
+      require("custom.plugins.configs.null-ls").setup()
     end,
   },
   ["tami5/lspsaga.nvim"] = {
@@ -124,6 +46,159 @@ return {
       }
     end,
   },
+  ["williamboman/mason.nvim"] = {
+    ensure_installed = {
+      -- lua stuff
+      "lua-language-server",
+      "stylua",
+      "luacheck",
+
+      -- web dev
+      "css-lsp",
+      "html-lsp",
+      "typescript-language-server",
+      "prettierd",
+      "emmet-ls",
+      "json-lsp",
+      "tailwindcss-language-server",
+
+      "lemminx",
+    },
+  },
+
+  ["elkowar/yuck.vim"] = {
+    opt = true,
+    ft = "yuck",
+  },
+  ["lambdalisue/suda.vim"] = { cmd = { "SudaRead", "SudaWrite" } },
+  ["Pocco81/TrueZen.nvim"] = {
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZFocus",
+    },
+    config = function()
+      require("true-zen").setup {
+        modes = {
+          ataraxis = {
+            shade = "dark",
+            backdrop = 0,
+            minimum_writing_area = {
+              width = 70,
+              height = 60,
+            },
+            quit_untoggles = true,
+            padding = {
+              left = 52,
+              right = 52,
+              top = 0,
+              bottom = 0,
+            },
+            open_callback = nil,
+            close_callback = nil,
+          },
+          minimalist = {
+            ignored_buf_types = { "nofile" },
+            options = {
+              number = false,
+              relativenumber = false,
+              showtabline = 0,
+              signcolumn = "no",
+              statusline = "",
+              cmdheight = 1,
+              laststatus = 0,
+              showcmd = false,
+              showmode = false,
+              ruler = false,
+              numberwidth = 1,
+            },
+            open_callback = nil,
+            close_callback = nil,
+          },
+          narrow = {
+
+            folds_style = "informative",
+            run_ataraxis = true,
+            open_callback = nil,
+            close_callback = nil,
+          },
+          focus = {
+            open_callback = nil,
+            close_callback = nil,
+          },
+        },
+        integrations = {
+          tmux = false,
+          kitty = {
+            enabled = false,
+            font = "+3",
+          },
+          twilight = false,
+        },
+      }
+    end,
+  },
+
+  -- Dashboard
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    config = function()
+      require "custom.plugins.configs.alpha"
+    end,
+  },
+
+  -- Web Dev
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
+  ["https://github.com/windwp/nvim-ts-autotag"] = {
+    before = "nvim-treesitter",
+    opt = true,
+    ft = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "markdown",
+      "glimmer",
+      "handlebars",
+      "hbs",
+    },
+  },
+
+  ["ggandor/leap.nvim"] = {
+    event = "BufRead",
+    config = function()
+      require("leap").set_default_keymaps()
+    end,
+  },
+  ["Shatur/neovim-session-manager"] = {
+    cmd = "SessionManager",
+    event = "BufRead",
+    config = function()
+      local Path = require "plenary.path"
+      require("session_manager").setup {
+        sessions_dir = Path:new(vim.fn.stdpath "data", "sessions"),
+        path_replacer = "__",
+        colon_replacer = "++",
+        autoload_mode = require("session_manager.config").AutoloadMode.Disabled,
+        autosave_last_session = true,
+        autosave_ignore_not_normal = true,
+        autosave_ignore_filetypes = {
+          "gitcommit",
+        },
+        autosave_only_in_session = true,
+        max_path_length = 80,
+      }
+    end,
+  },
+
   -- Copilot
   -- ["github/copilot.vim"] = {},
   ["zbirenbaum/copilot.lua"] = {
@@ -141,6 +216,7 @@ return {
     after = { "copilot.lua" },
     before = { "nvim-cmp" },
   },
+
   ["NTBBloodbath/rest.nvim"] = {
     -- ft = "http",
     config = function()

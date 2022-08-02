@@ -98,7 +98,7 @@ M.cmp = {
     end,
   },
   sources = {
-    { name = "luasnip" },
+    { name = "luasnip", max_item_count = 10 },
     { name = "nvim_lsp", max_item_count = 15 },
     { name = "buffer" },
     { name = "nvim_lua" },
