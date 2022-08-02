@@ -38,6 +38,10 @@ files = { "cfg/awesome" = { target="~/.config/awesome", type = "symbolic" } }
 depends = ["polybar", "rofi", "dunst", "colors"]
 files = {"cfg/bspwmrc" = "~/.config/bspwm/bspwmrc", "cfg/sxhkdrc" = "~/.config/sxhkd/sxhkdrc", "cfg/picom/picom.conf" = "~/.config/bspwm/picom.conf"}
 
+[dk]
+depends = ["polybar", "rofi", "dunst", "colors"]
+files = {"cfg/dk" = "~/.config/dk"}
+
 [dunst]
 files = { "cfg/dunstrc" = "~/.config/dunst/dunstrc" }
 
